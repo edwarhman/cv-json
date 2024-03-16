@@ -2,6 +2,14 @@
 import Section from "../Section.astro"
 
 import { work } from "@cv"
+
+interface Props {
+  months: string[];
+}
+
+const {
+  months
+} = Astro.props
 ---
 
 <Section title="Experiencia laboral">
@@ -10,9 +18,12 @@ import { work } from "@cv"
       work.map(
         ({ name, startDate, endDate, position, summary, highlights, url }) => {
           const startYear = new Date(startDate).getFullYear()
+          const startMonth = months[Number(new Date(startDate).getMonth())]
           const endYear =
             endDate != null ? new Date(endDate).getFullYear() : "Actual"
-          const years = `${startYear} - ${endYear}`
+          const endMonth =
+            endDate != null ? months[Number(new Date(endDate).getMonth())] : ""
+          const years = `${startMonth} ${startYear} - ${endMonth} ${endYear}`
 
           return (
             <li>
