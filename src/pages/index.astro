@@ -11,13 +11,27 @@ import KeyboardManager from "@/components/KeyboardManager.astro"
 
 import { basics } from "@cv"
 const { name, label } = basics
+const months = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre",
+]
 ---
 
 <Layout title={`Portafolio de ${name} - ${label}`}>
   <main>
     <Hero />
     <About />
-    <Experience />
+    <Experience months={months} />
     <Education />
     <Projects />
     <Skills />
