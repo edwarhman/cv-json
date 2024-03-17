@@ -1,7 +1,13 @@
 ---
 import Section from "../Section.astro"
+import type { Education } from "@/cv"
 
-import { education } from "@cv"
+interface Props {
+  education: Education[]
+}
+const {
+  education
+} = Astro.props
 ---
 
 <Section title="Educación">

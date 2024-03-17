@@ -11,11 +11,11 @@ import Git from "@/icons/git.astro"
 import GitHub from "@/icons/GitHub.astro"
 import Tailwind from "@/icons/tailwind.astro"
 import Next from "@/icons/next.astro"
-import { skills } from "@cv"
 import Swift from "@/icons/swift.astro"
 import SwiftUI from "@/icons/swiftui.astro"
 import Kotlin from "@/icons/kotlin.astro"
 import Flutter from "@/icons/flutter.astro"
+import type { Skills } from "@/cv"
 
 const SKILLS_ICONS: Record<string, any> = {
   HTML,
@@ -34,6 +34,11 @@ const SKILLS_ICONS: Record<string, any> = {
   Kotlin,
   Flutter,
 }
+
+interface Props {
+  skills: Skills[];
+}
+const { skills } = Astro.props
 ---
 
 <Section title="Habilidades">
