@@ -1,7 +1,11 @@
 ---
+import type { Basics } from "@/cv"
 import Section from "../Section.astro"
 
-import { basics } from "@cv"
+interface Props {
+  basics: Basics
+}
+const { basics } = Astro.props
 const { summary } = basics
 ---
 

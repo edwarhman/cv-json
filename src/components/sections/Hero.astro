@@ -1,5 +1,4 @@
 ---
-import { basics } from "@cv"
 import Section from "@/components/Section.astro"
 import Mail from "@/icons/Mail.astro"
 import Phone from "@/icons/Phone.astro"
@@ -8,7 +7,12 @@ import LinkedIn from "@/icons/LinkedIn.astro"
 import GitHub from "@/icons/GitHub.astro"
 import WorldMap from "@/icons/WorldMap.astro"
 import type { SocialIcon } from "@/types"
+import type { Basics } from "@/cv"
 
+interface Props {
+  basics: Basics;
+}
+const { basics } = Astro.props
 const { name, label, image, location, profiles, phone, email } = basics
 const { city, region } = location
 
