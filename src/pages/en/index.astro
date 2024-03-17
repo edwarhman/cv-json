@@ -11,33 +11,33 @@ import KeyboardManager from "@/components/KeyboardManager.astro"
 import { getEntry } from "astro:content"
 import type { CV } from "@/cv"
 
-const cvCollection = await getEntry('cv', 'es')
+const cvCollection = await getEntry('cv', 'en')
 const { basics, education, work, projects, skills } = cvCollection.data as CV
 const { name, label } = basics
 const months = [
-  "Enero",
-  "Febrero",
-  "Marzo",
-  "Abril",
-  "Mayo",
-  "Junio",
-  "Julio",
-  "Agosto",
-  "Septiembre",
-  "Octubre",
-  "Noviembre",
-  "Diciembre",
-]
+  "January",   // Enero
+  "February",  // Febrero
+  "March",     // Marzo
+  "April",     // Abril
+  "May",       // Mayo
+  "June",      // Junio
+  "July",      // Julio
+  "August",    // Agosto
+  "September", // Septiembre
+  "October",   // Octubre
+  "November",  // Noviembre
+  "December"   // Diciembre
+];
 ---
 
 <Layout title={`Portafolio de ${name} - ${label}`}>
   <main>
-    <Hero basics={basics}/>
-    <About basics={basics}/>
+    <Hero  basics={basics}/>
+    <About basics={basics} />
     <Experience months={months} work={work} />
-    <Education education={education}/>
-    <Projects projects={projects}/>
-    <Skills skills={skills}/>
+    <Education education={education} />
+    <Projects projects={projects} />
+    <Skills skills={skills} />
   </main>
 
   <KeyboardManager />
