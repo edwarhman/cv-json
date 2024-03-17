@@ -214,8 +214,10 @@
       "isActive": false,
       "description": "Back-office website for doctors in a pediatric clinic. It allows you to manage clinical records, view graphs for diagnosis and schedule appointments.",
       "highlights": [
-        "Choose your own adventure",
-        "Developing"
+        "React",
+        "Firebase",
+        "OneSignal",
+        "JavaScript"
       ],
       "url": "https://www.facebook.com/unete.neopediatrica/"
     },
@@ -224,9 +226,11 @@
       "isActive": false,
       "description": "Platform to request towing services through a web application. With functionality to view the status of the service and the location of the user and the driver in real time.",
       "highlights": [
-        "+1 million views",
-        "Multilanguage",
-        "JavaScript & TypeScript"
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Socket.io",
+        "GraphGL"
       ],
       "url": "https://medium.com/@admin_98448"
     },
@@ -235,8 +239,10 @@
       "isActive": true,
       "description": "Community-driven DAO and decentralized fundraising platform, allowing members to access and contribute to new and existing projects.",
       "highlights": [
-        "+2000 active users",
-        "Challenges for any language"
+        "JavaScript & TypeScript",
+        "GraphQL",
+        "Ethers.js",
+        "Solidity"
       ],
       "url": "https://leaderdao.ai/"
     },
@@ -245,8 +251,10 @@
       "isActive": true,
       "description": "Mobile application for health treatment using the novel neurofrequency method. It allows you to plan treatments and receive constant notifications.",
       "highlights": [
-        "100k visits per month",
-        "Community Powered"
+        "Node.js",
+        "SendGrid",
+        "Express.js",
+        "MongoDB"
       ],
       "url": "https://neurofrequencies.com/",
       "github": ""
@@ -256,8 +264,10 @@
       "isActive": true,
       "description": "System to pay payrolls in cryptocurrencies in a gradual and automated manner through the use of smart contracts. Save frequent payments, plan future payments and manage existing ones.",
       "highlights": [
-        "100% free",
-        "+500 community solutions"
+        "Node.js",
+        "Solidity",
+        "Hardhat",
+        "The Graph"
       ],
       "url": "https://probstecnicas.com",
       "github": "https://github.com/midudev/tests-technical"
@@ -266,8 +276,9 @@
       "name": "HopNow",
       "description": "Platform for online tourism. From the application you can select a tourist site from anywhere in the world and live the experience of a tour with the help of a specialized guide.",
       "highlights": [
-        "+15k tickets distributed",
-        "+50k live viewers"
+        "Express.js",
+        "Stripe",
+        "React"
       ],
       "url": "https://miduconf.com"
     }

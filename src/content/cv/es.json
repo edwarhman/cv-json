@@ -214,8 +214,10 @@
       "isActive": false,
       "description": "Sitio Web de back-office para los doctores de una clínica pediátrica. Permite gestionar hitoriales clínicos, visualizar gráficas para el diagnostico y agendar citas.",
       "highlights": [
-        "Elige tu propia aventura",
-        "En desarrollo"
+        "React",
+        "Firebase",
+        "OneSignal",
+        "JavaScript"
       ],
       "url": "https://www.facebook.com/unete.neopediatrica/"
     },
@@ -224,9 +226,11 @@
       "isActive": false,
       "description": "PLataforma para solicitar servicios de remolque mediante una aplicación web. Con funcionalidad para visualizar el estado del servicio y la localización del usuario y del conductor en tiempo real.",
       "highlights": [
-        "+1 millón de visitas",
-        "Multidioma",
-        "JavaScript & TypeScript"
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Socket.io",
+        "GraphGL"
       ],
       "url": "https://medium.com/@admin_98448"
     },
@@ -235,8 +239,10 @@
       "isActive": true,
       "description": "DAO impulsada por la comunidad y plataforma descentralizada de recaudación de fondos, que permite a los miembros acceder y contribuir a proyectos nuevos y existentes.",
       "highlights": [
-        "+2000 usuarios activos",
-        "Retos para cualquier lenguaje"
+        "JavaScript & TypeScript",
+        "GraphQL",
+        "Ethers.js",
+        "Solidity"
       ],
       "url": "https://leaderdao.ai/"
     },
@@ -245,8 +251,10 @@
       "isActive": true,
       "description": "Aplicación móvil para para el tratamiento de la salud mediante el novedoso método de las neurofrecuencias. Permite planificar los tratamientos y recibir notificaciones de manera constante.",
       "highlights": [
-        "100k visitas al mes",
-        "Desarrollado por la comunidad"
+        "Node.js",
+        "SendGrid",
+        "Express.js",
+        "MongoDB"
       ],
       "url": "https://neurofrequencies.com/",
       "github": ""
@@ -256,8 +264,10 @@
       "isActive": true,
       "description": "Sistema para pagar nominas de sueldos en criptomonedas de manera paulatina y automatizada mediante el uso de contratos inteligentes. Guarda pagos frecuentes, planifica pagos futuros y gestiona los ya existentes.",
       "highlights": [
-        "100% gratuito",
-        "+500 soluciones de la comunidad"
+        "Node.js",
+        "Solidity",
+        "Hardhat",
+        "The Graph"
       ],
       "url": "https://pruebastecnicas.com",
       "github": "https://github.com/midudev/pruebas-tecnicas"
@@ -266,8 +276,9 @@
       "name": "HopNow",
       "description": "Plataforma para turismo online. Desde la aplicación permite seleccionar un sitio turístico de cualquier parte del mundo y vivir la experiencia de un tour de la mano de un guía especializado.",
       "highlights": [
-        "+15k tickets repartidos",
-        "+50k espectadores en directo"
+        "Express.js",
+        "Stripe",
+        "React"
       ],
       "url": "https://miduconf.com"
     }
