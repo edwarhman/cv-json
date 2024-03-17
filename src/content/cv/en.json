@@ -261,7 +261,7 @@
     },
     {
       "name": "Clockwork",
-      "isActive": true,
+      "isActive": false,
       "description": "System to pay payrolls in cryptocurrencies in a gradual and automated manner through the use of smart contracts. Save frequent payments, plan future payments and manage existing ones.",
       "highlights": [
         "Node.js",
@@ -269,8 +269,7 @@
         "Hardhat",
         "The Graph"
       ],
-      "url": "https://probstecnicas.com",
-      "github": "https://github.com/midudev/tests-technical"
+      "url": null
     },
     {
       "name": "HopNow",
@@ -280,7 +279,7 @@
         "Stripe",
         "React"
       ],
-      "url": "https://miduconf.com"
+      "url": null
     }
   ]
 }

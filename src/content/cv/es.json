@@ -261,7 +261,7 @@
     },
     {
       "name": "Clockwork",
-      "isActive": true,
+      "isActive": false,
       "description": "Sistema para pagar nominas de sueldos en criptomonedas de manera paulatina y automatizada mediante el uso de contratos inteligentes. Guarda pagos frecuentes, planifica pagos futuros y gestiona los ya existentes.",
       "highlights": [
         "Node.js",
@@ -269,8 +269,7 @@
         "Hardhat",
         "The Graph"
       ],
-      "url": "https://pruebastecnicas.com",
-      "github": "https://github.com/midudev/pruebas-tecnicas"
+      "url": null
     },
     {
       "name": "HopNow",
@@ -280,7 +279,7 @@
         "Stripe",
         "React"
       ],
-      "url": "https://miduconf.com"
+      "url": null
     }
   ]
 }
