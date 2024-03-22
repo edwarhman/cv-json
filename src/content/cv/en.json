@@ -173,13 +173,6 @@
       ]
     },
     {
-      "name": "Next.js",
-      "level": "Advanced",
-      "keywords": [
-        "Web Development", "Frontend", "React Framework", "SSR", "Static Generation"
-      ]
-    },
-    {
       "name": "React",
       "level": "Advanced",
       "keywords": [
@@ -239,7 +232,6 @@
       "isActive": true,
       "description": "Community-driven DAO and decentralized fundraising platform, allowing members to access and contribute to new and existing projects.",
       "highlights": [
-        "JavaScript & TypeScript",
         "GraphQL",
         "Ethers.js",
         "Solidity"

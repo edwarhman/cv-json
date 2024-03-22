@@ -173,13 +173,6 @@
       ]
     },
     {
-      "name": "Next.js",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "React Framework", "SSR", "Static Generation"
-      ]
-    },
-    {
       "name": "React",
       "level": "Avanzado",
       "keywords": [
@@ -224,7 +217,7 @@
     {
       "name": "Instatow",
       "isActive": false,
-      "description": "PLataforma para solicitar servicios de remolque mediante una aplicación web. Con funcionalidad para visualizar el estado del servicio y la localización del usuario y del conductor en tiempo real.",
+      "description": "PLataforma para solicitar servicios de remolque mediante una app. Con funcionalidad para visualizar el estado del servicio, la localización del usuario y del conductor en tiempo real.",
       "highlights": [
         "Node.js",
         "Express.js",
@@ -239,7 +232,6 @@
       "isActive": true,
       "description": "DAO impulsada por la comunidad y plataforma descentralizada de recaudación de fondos, que permite a los miembros acceder y contribuir a proyectos nuevos y existentes.",
       "highlights": [
-        "JavaScript & TypeScript",
         "GraphQL",
         "Ethers.js",
         "Solidity"
