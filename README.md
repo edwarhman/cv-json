@@ -1,9 +1,8 @@
 
 
 <div align="center">
-<img src="logo.png" height="90px" width="auto" /> 
 <h2>
-    <em>Résumé</em> minimalista maquetado para web y pdf
+    <em>Resume</em> minimalista maquetado para web y pdf
 </h2>
 <p>
 Esquema del JSON de CV de <a href="https://jsonresume.org/schema/">jsonresume.org</a>
@@ -12,6 +11,7 @@ Esquema del JSON de CV de <a href="https://jsonresume.org/schema/">jsonresume.or
 
 <p>
 Basado en el diseño de <a href="https://github.com/BartoszJarocki/cv">Bartosz Jarocki</a>
+y en la <a href="https://github.com/midudev/minimalist-portfolio-json">plantilla</a> de <a href="https://midu.dev">Midudev</a>
 
 </p>
 
@@ -38,18 +38,6 @@ Basado en el diseño de <a href="https://github.com/BartoszJarocki/cv">Bartosz J
 
 <p></p>
 
-<div align="center">
-
-![Astro Badge](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff&style=flat)
-![GitHub stars](https://img.shields.io/github/stars/midudev/minimalist-portfolio-json)
-![GitHub issues](https://img.shields.io/github/issues/midudev/minimalist-portfolio-json)
-![GitHub forks](https://img.shields.io/github/forks/midudev/minimalist-portfolio-json)
-![GitHub PRs](https://img.shields.io/github/issues-pr/midudev/minimalist-portfolio-json)
-
-</div>
-
-<img src="portada.png"></img>
-
 ## 🛠️ Stack
 
 - [**Astro**](https://astro.build/) - El framework web de la nueva época.
@@ -74,7 +62,7 @@ pnpm create astro@latest -- --template midudev/minimalist-portfolio-json
 ```
 
 ### 2. Añade tu contenido:
-Edita el archivo `cv.json` para crear tu propio Portafolio/CV imprimible.
+Edita los archivos en el directorio `src/cv` para crear tu propio Portafolio/CV imprimible en lenguaje español e inglés, o crea un nuevo archivo para añadir un nuevo idioma.
 ### 3. Lanza el servidor de desarrollo:
 
 ```bash
@@ -98,7 +86,7 @@ pnpm dev
 
 ## 🔑 Licencia
 
-[MIT](LICENSE.txt) - Creado por [**midudev**](https://midu.dev).
+[MIT](LICENSE.txt) - Basado en el proyecto de [**midudev**](https://midu.dev) y modificado por [**edwarhman**](https://github.com/edwarhman). 
 
 
 
