@@ -4,13 +4,14 @@ import Section from "../Section.astro"
 import type { Projects } from "@/cv"
 
 interface Props {
+  title: string;
   projects: Projects[];
 }
-const { projects } = Astro.props
+const { title, projects } = Astro.props
 // import { projects } from "@cv"
 ---
 
-<Section title="Proyectos">
+<Section title={title}>
   <ul>
     {
       projects.map(

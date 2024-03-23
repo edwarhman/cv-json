@@ -1,20 +1,26 @@
 ---
 import type { Work } from "@/cv";
 import Section from "../Section.astro"
+import { getLangFromUrl, useTranslation } from "@/i18n/utils";
 
 
 interface Props {
+  title: string;
   months: string[];
   work: Work[]
 }
 
 const {
+  title,
   months,
   work
 } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const uiContent = useTranslation(lang)
 ---
 
-<Section title="Experiencia laboral">
+<Section title={title}>
   <ul>
     {
       work.map(
@@ -22,7 +28,7 @@ const {
           const startYear = new Date(startDate).getFullYear()
           const startMonth = months[Number(new Date(startDate).getMonth())]
           const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual"
+            endDate != null ? new Date(endDate).getFullYear() : uiContent.current
           const endMonth =
             endDate != null ? months[Number(new Date(endDate).getMonth())] : ""
           const years = `${startMonth} ${startYear} - ${endMonth} ${endYear}`

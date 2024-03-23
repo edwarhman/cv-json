@@ -1,22 +1,28 @@
 ---
+import { getLangFromUrl, useTranslation } from "@/i18n/utils";
 import Section from "../Section.astro"
 import type { Education } from "@/cv"
 
 interface Props {
+  title: string;
   education: Education[]
 }
 const {
+  title,
   education
 } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const uiContent = useTranslation(lang)
 ---
 
-<Section title="Educación">
+<Section title={title}>
   <ul>
     {
       education.map(({ institution, startDate, endDate, area }) => {
         const startYear = new Date(startDate).getFullYear()
         const endYear =
-          endDate != null ? new Date(endDate).getFullYear() : "Actual"
+          endDate != null ? new Date(endDate).getFullYear() : uiContent.current
         const years = `${startYear} - ${endYear}`
 
         return (

@@ -8,6 +8,7 @@ import GitHub from "@/icons/GitHub.astro"
 import WorldMap from "@/icons/WorldMap.astro"
 import type { SocialIcon } from "@/types"
 import type { Basics } from "@/cv"
+import { getLangFromUrl, useTranslation } from "@/i18n/utils"
 
 interface Props {
   basics: Basics;
@@ -26,6 +27,8 @@ const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
 const linkedUrl = linkedInfo?.url
 
 const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
+const lang = getLangFromUrl(Astro.url)
+const uiContent = useTranslation(lang)
 ---
 
 <Section>
@@ -45,7 +48,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           email && (
             <a
               href={`mailto:${email}`}
-              title={`Enviar un correo electrónico a ${name} al correo ${email}`}
+              title={uiContent.contact.email(name, email)}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -57,7 +60,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           phone && (
             <a
               href={`tel:${phone}`}
-              title={`Llamar por teléfono a ${name} al número ${phone}`}
+              title={uiContent.contact.phone(name, phone)}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -72,7 +75,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
             return (
               <a
                 href={url}
-                title={`Visitar el perfil de ${name} en ${network}`}
+                title={uiContent.contact.socialMedia(name, network)}
                 target="_blank"
                 rel="noopener noreferrer"
               >
