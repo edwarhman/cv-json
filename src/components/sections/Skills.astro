@@ -36,12 +36,13 @@ const SKILLS_ICONS: Record<string, any> = {
 }
 
 interface Props {
+  title: string;
   skills: Skills[];
 }
-const { skills } = Astro.props
+const { title, skills } = Astro.props
 ---
 
-<Section title="Habilidades">
+<Section title={title}>
   <ul>
     {
       skills.map(({ name }) => {
