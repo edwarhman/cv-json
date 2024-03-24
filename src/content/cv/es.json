@@ -229,9 +229,10 @@
     },
     {
       "name": "LeaderDao",
-      "isActive": true,
+      "isActive": false,
       "description": "DAO impulsada por la comunidad y plataforma descentralizada de recaudación de fondos, que permite a los miembros acceder y contribuir a proyectos nuevos y existentes.",
       "highlights": [
+        "React",
         "GraphQL",
         "Ethers.js",
         "Solidity"
@@ -240,7 +241,7 @@
     },
     {
       "name": "Neurofrequencies",
-      "isActive": true,
+      "isActive": false,
       "description": "Aplicación móvil para para el tratamiento de la salud mediante el novedoso método de las neurofrecuencias. Permite planificar los tratamientos y recibir notificaciones de manera constante.",
       "highlights": [
         "Node.js",
