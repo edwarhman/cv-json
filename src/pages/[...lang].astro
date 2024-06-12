@@ -18,16 +18,16 @@ import { useTranslation } from "@/i18n/utils";
 const months = [
   "January",   // Enero
   "February",  // Febrero
-  "March",     // Marzo
+  "Marzo",     // Marzo
   "April",     // Abril
   "May",       // Mayo
-  "June",      // Junio
+  "Junio",      // Junio
   "July",      // Julio
   "August",    // Agosto
-  "September", // Septiembre
+  "Septiembre", // Septiembre
   "October",   // Octubre
   "November",  // Noviembre
-  "December"   // Diciembre
+  "Diciembre"   // Diciembre
 ];
 
 type Languages = typeof i18n.locales[number] | undefined; 
@@ -57,8 +57,8 @@ const rContent = useTranslation(lang ?? i18n.defaultLocale)
     <About title={rContent.sections.about} basics={basics} />
     <Experience title={rContent.sections.experience} months={months} work={work} />
     <Education title={rContent.sections.education} education={education} />
-    <Projects title={rContent.sections.projects} projects={projects} />
-    <Skills title={rContent.sections.skills} skills={skills} />
+    <!-- <Projects title={rContent.sections.projects} projects={projects} /> -->
+    <!-- <Skills title={rContent.sections.skills} skills={skills} /> -->
   </main>
 
   <KeyboardManager />
