@@ -6,7 +6,7 @@
     "email": "edwarhman@gmail.com",
     "phone": "+58 4122021693",
     "url": "https://www.linkedin.com/in/emersonwarhman/",
-    "summary": "Más de 2 años de experiencia desarrollando aplicaciones web y móviles para los sectores del transporte, la salud y las finanzas. Desarrollé una aplicación para poder solicitar servicios de remolque desde el celular. Soy entusiasta de la tecnología, lo cual me motiva a investigar y  a ampliar mis conocimientos y experiencia en el sector informático y tecnológico y me permite aplicar mis habilidades de manera efectiva.",   
+    "summary": "Más de 2 años de experiencia desarrollando aplicaciones web y móviles para los sectores del transporte, la salud y las finanzas. Desarrollé una aplicación para poder solicitar servicios de remolque para vehículos desde el dispositivo móvil. Domino las tecnologías Javascript, Typescript, React.js, React Native, Expo, Ant Design, Express, MySQL, MongoDB, GraphQL. Soy un gran entusiasta de la tecnología, lo cual me motiva a ir más allá, ampliando constantemente mis conocimientos para poder aplicarlos en mis proyectos.",   
     "location": {
       "address": "",
       "postalCode": "1010",
@@ -35,7 +35,7 @@
       "url": "https://myteamabroad.com/",
       "startDate": "2022/12/01",
       "endDate": null,
-      "summary": "Desarrollé un sistema para solicitar servicios de remolques a través de una aplicación móvil. Automaticé los procesos de despliegue y entrega de distintas aplicaciones e instruí otros programadores para que pudieran realizar el despliegue, mejorando la productividad del equipo",
+      "summary": "Desarrollé un sistema para solicitar servicios de remolques a través de una aplicación móvil. Diseñé la base de datos y el sistema de sockets para que los clientes y conductores pudieran interactuar entre ellos.  Automaticé los procesos de despliegue y testing del sistema, mejorando la productividad durante el desarrollo.",
       "highlights": [
         "Started the company"
       ]
@@ -46,7 +46,7 @@
       "startDate": "2023/03/01",
       "endDate": "2023/12/01",
       "url": "https://leaderdao.ai/",
-      "summary": "Participé en la creación de un sistema de contratos inteligentes blockchain que ofrece servicios financieros y de ahorro en criptomonedas para sus usuarios. Desarrollé los sitios web que permitieron a los usuarios interactuar con la plataforma y también realicé las pruebas de calidad del código.",
+      "summary": "Participé en la creación de una plataforma web blockchain que ofrece servicios financieros y de ahorro en criptomonedas para sus usuarios. Desarrollé los sitios web utilizando React.js y Styled Components, conecté la aplicación a los contratos inteligentes utilizando Ethers.js y GraphQL. También realicé las pruebas unitarias y de integración par asegurar la calidad del código.",
       "highlights": [
         "Started the company"
       ]
@@ -56,7 +56,7 @@
       "position": "Programador Web",
       "startDate": "2022/06/01",
       "endDate": "2022/09/01",
-      "summary": "Di soporte a un sitio web de back-office para una clínica pediátrica. Extendí las funcionalidades del sitio para que permitiera a los doctores llevar a cabo el seguimiento del historial clínico de sus pacientes y también agendar nuevas citas que fuesen notificadas tanto al paciente como al doctor. La plataforma es utilizada por los doctores de la clínica para atender más de 40 pacientes mensualmente.",
+      "summary": "Di soporte a un sitio web administrativo para una clínica pediátrica. Extendí las funcionalidades del sitio para que permitiera a los doctores llevar a cabo el seguimiento del historial clínico de sus pacientes y también agendar nuevas citas que fuesen notificadas tanto al paciente como al doctor. La plataforma es utilizada por los doctores de la clínica para atender más de 40 pacientes mensualmente.",
       "highlights": [
         "Started the company"
       ]
@@ -103,7 +103,7 @@
     "url": "http://www.ucv.ve/",
     "area": "Ingeniero Eléctrico",
     "studyType": "Bachelor",
-    "startDate": "2015-03-9",
+    "startDate": null,
     "endDate": null,
     "score": "4.0",
     "courses": [
@@ -242,6 +242,8 @@
       "highlights": [
         "Node.js",
         "Express.js",
+        "React Native",
+        "Expo",
         "MongoDB",
         "Socket.io",
         "GraphGL"
@@ -266,6 +268,7 @@
       "description": "Aplicación móvil para para el tratamiento de la salud mediante el novedoso método de las neurofrecuencias. Permite planificar los tratamientos y recibir notificaciones de manera constante.",
       "highlights": [
         "Node.js",
+        "React Native",
         "SendGrid",
         "Express.js",
         "MongoDB"
