@@ -23,7 +23,7 @@ const uiContent = useTranslation(lang)
         const startYear = new Date(startDate).getFullYear()
         const endYear =
           endDate != null ? new Date(endDate).getFullYear() : uiContent.current
-        const years = `${startYear} - ${endYear}`
+        const years = startDate ? `${startYear} - ${endYear}` : `${endYear}`
 
         return (
           <li>
