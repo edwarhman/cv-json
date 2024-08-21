@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Emerson David Warhman Cardona",
-    "label": "Full Stack Developer with more than 2 years of experience",
+    "label": "Web Developer",
     "image": "/me.webp",
     "email": "edwarhman@gmail.com",
     "phone": "+58 4122021693",
     "url": "https://www.linkedin.com/in/emersonwarhman/",
-    "summary": "+2 years of experience developing web applications. I have worked on the creation and design of new software projects from their initial stages, I have also maintained and extended existing projects. I have collaborated with multidisciplinary teams of up to 6 people" ,
+    "summary": "Over 2 years of experience developing and maintaining web applications, servers, and database systems for the transportation, health, and finance sectors. Developed an application to request towing services for vehicles from a mobile device. Proficient in JavaScript, TypeScript, React.js, React Native, Expo, Ant Design, Express, MySQL, MongoDB, GraphQL. Experienced in efficiently and securely using AWS services (EC2, S3, RDS, Cloudfront, Lambda). A technology enthusiast, constantly expanding my knowledge to apply it to my projects.",
     "location": {
       "address": "",
       "postalCode": "1010",
@@ -39,7 +39,7 @@
       "url": "https://myteamabroad.com/",
       "startDate": "2022/12/01",
       "endDate": null,
-      "summary": "I developed a system to request towing services through a mobile application. I automated the deployment processes of different applications and instructed other programmers so that they could carry out the deployment, improving the team's productivity",
+      "summary": "Developed a system to request towing services through a mobile application. Designed the database using MySQL and a socket system for clients and drivers to interact. Automated deployment and testing processes using GitHub Actions, improving productivity and efficiency during development.",
       "highlights": [
         "Started the company"
       ]
@@ -50,7 +50,7 @@
       "startDate": "2023/03/01",
       "endDate": "2023/12/01",
       "url": "https://leaderdao.ai/",
-      "summary": "I created different modules for a comprehensive blockchain smart contract system that offers airdrop and launchpad services to its user base. I developed the websites that allowed users to interact with the system's smart contracts.",
+      "summary": "Participated in the creation of a blockchain web platform offering financial and cryptocurrency savings services to users. Developed websites using React.js and Styled Components, connected the application to smart contracts using Ethers.js and GraphQL. Also performed unit and integration tests to ensure code quality.",
       "highlights": [
         "Started the company"
       ]
@@ -60,123 +60,159 @@
       "position": "Fullstack Developer",
       "startDate": "2022/06/01",
       "endDate": "2022/09/01",
-      "summary": "Maintained and extended the functionalities of a back-office website for a pediatric clinic that allowed doctors to track their patients' clinical history and also schedule new appointments that were notified to both the patient and to the doctor.",
+      "summary": " Supported an administrative website for a pediatric clinic. Extended site functionalities to allow doctors to track patient medical histories and schedule new appointments, notifying both patients and doctors. The platform is used by clinic doctors to attend to over 40 patients monthly.",
       "highlights": [
         "Started the company"
       ]
     }
   ],
-  "volunteer": [{
-    "organization": "Organization",
-    "position": "Volunteer",
-    "url": "https://organization.com/",
-    "startDate": "2012-01-01",
-    "endDate": "2013-01-01",
-    "summary": "Description…",
-    "highlights": [
-      "Awarded 'Volunteer of the Month'"
-    ]
-  }],
-  "education": [{
-    "institution": "Central University of Venezuela",
-    "url": "http://www.ucv.ve/",
-    "area": "Electrical Engineer",
-    "studyType": "Bachelor",
-    "startDate": "2015-03-9",
-    "endDate": null,
-    "score": "4.0",
-    "courses": [
-      "DB1101 - Basic SQL"
-    ]
-  }],
-  "awards": [{
-    "title": "Award",
-    "date": "2014/11/01",
-    "awarder": "Company",
-    "summary": "There is no spoon."
-  }],
-  "certificates": [{
-    "name": "Certificate",
-    "date": "2021/11/07",
-    "issuer": "Company",
-    "url": "https://certificate.com"
-  }],
-  "publications": [{
-    "name": "Publication",
-    "publisher": "Company",
-    "releaseDate": "2014/10/01",
-    "url": "https://publication.com",
-    "summary": "Description…"
-  }],
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": [
+        "Awarded 'Volunteer of the Month'"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Central University of Venezuela",
+      "url": "http://www.ucv.ve/",
+      "area": "Electrical Engineer",
+      "studyType": "Bachelor",
+      "startDate": "2015-03-9",
+      "endDate": null,
+      "score": "4.0",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014/11/01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021/11/07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014/10/01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }
+  ],
   "skills": [
     {
       "name": "HTML",
       "level": "Master",
       "keywords": [
-        "Web Development", "Frontend"
+        "Web Development",
+        "Frontend"
       ]
     },
     {
       "name": "CSS",
       "level": "Master",
       "keywords": [
-        "Web Development", "Frontend", "Responsive Design"
+        "Web Development",
+        "Frontend",
+        "Responsive Design"
       ]
     },
     {
       "name": "JavaScript",
       "level": "Master",
       "keywords": [
-        "Web Development", "Frontend", "Backend", "Fullstack"
+        "Web Development",
+        "Frontend",
+        "Backend",
+        "Fullstack"
       ]
     },
     {
       "name": "Tailwind",
       "level": "Advanced",
       "keywords": [
-        "Web Development", "Frontend", "CSS Framework", "Responsive Design"
+        "Web Development",
+        "Frontend",
+        "CSS Framework",
+        "Responsive Design"
       ]
     },
     {
       "name": "TypeScript",
       "level": "Advanced",
       "keywords": [
-        "Web Development", "Frontend", "Backend", "JavaScript Superset"
+        "Web Development",
+        "Frontend",
+        "Backend",
+        "JavaScript Superset"
       ]
     },
     {
       "name": "Node",
       "level": "Advanced",
       "keywords": [
-        "Web Development", "Backend", "JavaScript", "Server"
+        "Web Development",
+        "Backend",
+        "JavaScript",
+        "Server"
       ]
     },
     {
       "name": "MySQL",
       "level": "Advanced",
       "keywords": [
-        "Databases", "SQL", "Data Storage", "Backend"
+        "Databases",
+        "SQL",
+        "Data Storage",
+        "Backend"
       ]
     },
     {
       "name": "Git",
       "level": "Advanced",
       "keywords": [
-        "Version Control", "Collaboration", "Source Code"
+        "Version Control",
+        "Collaboration",
+        "Source Code"
       ]
     },
     {
       "name": "GitHub",
       "level": "Advanced",
       "keywords": [
-        "Version Control", "Collaboration", "Source Code", "Git"
+        "Version Control",
+        "Collaboration",
+        "Source Code",
+        "Git"
       ]
     },
     {
       "name": "React",
       "level": "Advanced",
       "keywords": [
-        "Web Development", "Frontend", "JavaScript Library", "UI"
+        "Web Development",
+        "Frontend",
+        "JavaScript Library",
+        "UI"
       ]
     }
   ],
@@ -190,22 +226,26 @@
       "fluency": "Advanced"
     }
   ],
-  "interests": [{
-    "name": "Wildlife",
-    "keywords": [
-      "Ferrets",
-      "Unicorns"
-    ]
-  }],
-  "references": [{
-    "name": "Jane Doe",
-    "reference": "Reference..."
-  }],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference..."
+    }
+  ],
   "projects": [
     {
       "name": "Unete Neopediatrica",
       "isActive": false,
-      "description": "Back-office website for doctors in a pediatric clinic. It allows you to manage clinical records, view graphs for diagnosis and schedule appointments.",
+      "description": "Back-office website for pediatric clinic doctors. Manages medical histories, visualizes diagnostic charts, and schedules appointments.",
       "highlights": [
         "React",
         "Firebase",
@@ -217,13 +257,15 @@
     {
       "name": "Instatow",
       "isActive": false,
-      "description": "Platform to request towing services through a web application. With functionality to view the status of the service and the location of the user and the driver in real time.",
+      "description": "Platform to request towing services via an app. Features real-time service status, user and driver location tracking.",
       "highlights": [
         "Node.js",
         "Express.js",
+        "React Native",
+        "Expo",
         "MongoDB",
         "Socket.io",
-        "GraphGL"
+        "GraphQL"
       ],
       "url": "https://medium.com/@admin_98448"
     },
@@ -242,9 +284,10 @@
     {
       "name": "Neurofrequencies",
       "isActive": false,
-      "description": "Mobile application for health treatment using the novel neurofrequency method. It allows you to plan treatments and receive constant notifications.",
+      "description": "Mobile application for health treatment using the innovative method of neurofrequencies. Allows planning treatments and receiving constant notifications.",
       "highlights": [
         "Node.js",
+        "React Native",
         "SendGrid",
         "Express.js",
         "MongoDB"
@@ -255,7 +298,7 @@
     {
       "name": "Clockwork",
       "isActive": false,
-      "description": "System to pay payrolls in cryptocurrencies in a gradual and automated manner through the use of smart contracts. Save frequent payments, plan future payments and manage existing ones.",
+      "description": "System for gradual and automated payroll payments in cryptocurrencies using smart contracts. Manages frequent payments, plans future payments, and handles existing ones.",
       "highlights": [
         "Node.js",
         "Solidity",
@@ -266,11 +309,13 @@
     },
     {
       "name": "HopNow",
-      "description": "Platform for online tourism. From the application you can select a tourist site from anywhere in the world and live the experience of a tour with the help of a specialized guide.",
+      "description": "Online tourism platform. Allows users to select a tourist site anywhere in the world and experience a tour with a specialized guide.",
       "highlights": [
         "Express.js",
         "Stripe",
-        "React"
+        "React",
+        "Socket.io",
+        "MongoDB"
       ],
       "url": null
     }
