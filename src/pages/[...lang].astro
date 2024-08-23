@@ -15,21 +15,6 @@ import type { CV } from "@/cv";
 import { i18n } from "@/i18n/config";
 import { useTranslation } from "@/i18n/utils";
 
-const months = [
-  "January", // Enero
-  "February", // Febrero
-  "March", // Marzo
-  "April", // Abril
-  "May", // Mayo
-  "June", // Junio
-  "July", // Julio
-  "August", // Agosto
-  "September", // Septiembre
-  "October", // Octubre
-  "November", // Noviembre
-  "December", // Diciembre
-];
-
 type Languages = (typeof i18n.locales)[number] | undefined;
 
 export const getStaticPaths = (async () => {
@@ -55,11 +40,7 @@ const rContent = useTranslation(lang ?? i18n.defaultLocale);
   <main>
     <Hero basics={basics} />
     <About title={rContent.sections.about} basics={basics} />
-    <Experience
-      title={rContent.sections.experience}
-      months={months}
-      work={work}
-    />
+    <Experience title={rContent.sections.experience} work={work} />
     <Projects title={rContent.sections.projects} projects={projects} />
     <Education title={rContent.sections.education} education={education} />
     <Skills title={rContent.sections.skills} skills={skills} />

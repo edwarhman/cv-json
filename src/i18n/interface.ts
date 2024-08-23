@@ -41,7 +41,21 @@ export const uiContent = {
                     }]
                 },
             }
-        }
+        },
+        months: [
+            "Enero", // January
+            "Febrero", // February
+            "Marzo", // March
+            "Abril", // April
+            "Mayo", // May
+            "Junio", // June
+            "Julio", // July
+            "Agosto", // August
+            "Septiembre", // September
+            "Octubre", // October
+            "Noviembre", // November
+            "Diciembre", // December
+        ]
     },
     en: {
         sections: {
@@ -85,6 +99,20 @@ export const uiContent = {
                     }]
                 },
             }
-        }
+        },
+        months: [
+            "January", // Enero
+            "February", // Febrero
+            "March", // Marzo
+            "April", // Abril
+            "May", // Mayo
+            "June", // Junio
+            "July", // Julio
+            "August", // Agosto
+            "September", // Septiembre
+            "October", // Octubre
+            "November", // Noviembre
+            "December", // Diciembre
+        ]
     }
 } as const
