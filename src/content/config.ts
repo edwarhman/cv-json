@@ -1,9 +1,9 @@
-import { defineCollection } from "astro:content";
+import { defineCollection } from 'astro:content'
 
 const cvCollection = defineCollection({
-    type: 'data'
-});
+  type: 'data'
+})
 
 export const collections = {
-    'cv': cvCollection
+  cv: cvCollection
 }

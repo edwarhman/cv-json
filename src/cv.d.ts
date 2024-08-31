@@ -1,16 +1,16 @@
 export interface CV {
   basics: Basics
-  work: Array<Work>
-  volunteer: Array<Volunteer>
-  education: Array<Education>
-  awards: Array<Awards>
-  certificates: Array<Certificates>
-  publications: Array<Publications>
-  skills: Array<Skills>
-  languages: Array<Languages>
-  interests: Array<Interests>
-  references: Array<References>
-  projects: Array<Projects>
+  work: Work[]
+  volunteer: Volunteer[]
+  education: Education[]
+  awards: Awards[]
+  certificates: Certificates[]
+  publications: Publications[]
+  skills: Skills[]
+  languages: Languages[]
+  interests: Interests[]
+  references: References[]
+  projects: Projects[]
 }
 
 interface Basics {
@@ -22,7 +22,7 @@ interface Basics {
   url: string
   summary: string
   location: Location
-  profiles: Array<Profiles>
+  profiles: Profiles[]
 }
 
 interface Location {
@@ -64,7 +64,7 @@ interface Volunteer {
 interface Skills {
   name: string
   level: string
-  keywords: Array<string>
+  keywords: string[]
 }
 
 interface Awards {
@@ -75,9 +75,9 @@ interface Awards {
 }
 
 interface Certificates {
-  name: string,
-  date: DateStr,
-  issuer: string,
+  name: string
+  date: DateStr
+  issuer: string
   url: string
 }
 
@@ -97,7 +97,7 @@ interface Education {
   startDate: DateStr
   endDate: DateStr
   score: string
-  courses: Array<string>
+  courses: string[]
 }
 
 interface Languages {
@@ -106,21 +106,21 @@ interface Languages {
 }
 
 type Language =
-  "Spanish"
-  | "English"
-  | "German"
-  | "France"
-  | "Italian"
-  | "Korean"
-  | "Portuguese"
-  | "Chinese"
-  | "Arabic"
-  | "Dutch"
-  | "Finnish"
-  | "Russian"
-  | "Turkish"
-  | "Hindi"
-  | "Bengali"
+  'Spanish'
+  | 'English'
+  | 'German'
+  | 'France'
+  | 'Italian'
+  | 'Korean'
+  | 'Portuguese'
+  | 'Chinese'
+  | 'Arabic'
+  | 'Dutch'
+  | 'Finnish'
+  | 'Russian'
+  | 'Turkish'
+  | 'Hindi'
+  | 'Bengali'
   | string
 
 interface Projects {
@@ -134,7 +134,7 @@ interface Projects {
 
 interface Interests {
   name: string
-  keywords: Array<string>
+  keywords: string[]
 }
 
 interface References {
@@ -142,4 +142,4 @@ interface References {
   reference: string
 }
 
-type Highlight = Array<String>
+type Highlight = String[]
