@@ -1,18 +1,18 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-import About from "@/components/sections/About.astro";
-import Education from "@/components/sections/Education.astro";
-import Experience from "@/components/sections/Experience.astro";
-import Hero from "@/components/sections/Hero.astro";
-import Projects from "@/components/sections/Projects.astro";
-import Skills from "@/components/sections/Skills.astro";
-import KeyboardManager from "@/components/KeyboardManager.astro";
+import About from "@/core/components/sections/About.astro";
+import Education from "@/core/components/sections/Education.astro";
+import Experience from "@/core/components/sections/Experience.astro";
+import Hero from "@/core/components/sections/Hero.astro";
+import Projects from "@/core/components/sections/Projects.astro";
+import Skills from "@/core/components/sections/Skills.astro";
+import KeyboardManager from "@/core/components/KeyboardManager.astro";
 
 import { getCollection } from "astro:content";
-import { i18n } from "@/i18n/config";
-import { useTranslation } from "@/i18n/utils";
-import Login from "@/components/Login.astro";
+import { i18n } from "@/core/i18n/config";
+import { useTranslation } from "@/core/i18n/utils";
+import Login from "@/core/components/Login.astro";
 
 const { lang, id } = Astro.params;
 

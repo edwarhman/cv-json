@@ -2,19 +2,14 @@
 import type { GetStaticPaths } from "astro";
 import Layout from "@/layouts/Layout.astro";
 
-import About from "@/components/sections/About.astro";
-import Education from "@/components/sections/Education.astro";
-import Experience from "@/components/sections/Experience.astro";
-import Hero from "@/components/sections/Hero.astro";
-import Projects from "@/components/sections/Projects.astro";
-import Skills from "@/components/sections/Skills.astro";
-import KeyboardManager from "@/components/KeyboardManager.astro";
+import Cv from "@/core/components/Cv.astro";
+import KeyboardManager from "@/core/components/KeyboardManager.astro";
 
 import { getCollection } from "astro:content";
 import type { CV } from "@/cv";
-import { i18n } from "@/i18n/config";
-import { useTranslation } from "@/i18n/utils";
-import Login from "@/components/Login.astro";
+import { i18n } from "@/core/i18n/config";
+import { useTranslation } from "@/core/i18n/utils";
+import Login from "@/core/components/Login.astro";
 
 type Languages = (typeof i18n.locales)[number] | undefined;
 
@@ -33,8 +28,8 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { lang } = Astro.params;
-const { basics, education, work, projects, skills } = Astro.props as CV;
-const { name, label } = basics;
+const cv = Astro.props as CV;
+const { name, label } = cv.basics;
 
 const rContent = useTranslation(lang ?? i18n.defaultLocale);
 ---
@@ -42,12 +37,7 @@ const rContent = useTranslation(lang ?? i18n.defaultLocale);
 <Layout title={rContent.pageTitle(name, label)}>
     <main>
         <Login />
-        <Hero basics={basics} />
-        <About title={rContent.sections.about} basics={basics} />
-        <Experience title={rContent.sections.experience} work={work} />
-        <Projects title={rContent.sections.projects} projects={projects} />
-        <Education title={rContent.sections.education} education={education} />
-        <Skills title={rContent.sections.skills} skills={skills} />
+        <Cv cv={cv} />
     </main>
 
     <KeyboardManager />

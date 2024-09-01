@@ -1,14 +1,13 @@
 ---
-import GitHub from "@/icons/GitHub.astro"
+import GitHub from "@/core/icons/GitHub.astro"
 import Section from "../Section.astro"
-import type { Projects } from "@/cv"
+import type { Project } from "@/cv"
 
 interface Props {
   title: string;
-  projects: Projects[];
+  projects: Project[];
 }
 const { title, projects } = Astro.props
-// import { projects } from "@cv"
 ---
 
 <Section title={title}>

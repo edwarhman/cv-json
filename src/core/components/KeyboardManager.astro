@@ -3,7 +3,7 @@ import 'hotkeypad/reset.css'
 import 'hotkeypad/index.css'
 import { type SocialIcon } from "@/types"
 import { basics } from "@/content/cv/es.json"
-import { getLangFromUrl, useTranslation } from '@/i18n/utils'
+import { getLangFromUrl, useTranslation } from '@/core/i18n/utils'
 
 const { profiles } = basics
 
@@ -94,7 +94,7 @@ const profilesInfo = profiles.map(({ network, url }) => {
 </div>
 
 <script>
-  import { useTranslation } from "@/i18n/utils"
+  import { useTranslation } from "@/core/i18n/utils"
   interface Info {
     id: string
     section: string
