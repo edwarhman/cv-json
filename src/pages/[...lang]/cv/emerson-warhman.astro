@@ -14,19 +14,22 @@ import { getCollection } from "astro:content";
 import type { CV } from "@/cv";
 import { i18n } from "@/i18n/config";
 import { useTranslation } from "@/i18n/utils";
+import Login from "@/components/Login.astro";
 
 type Languages = (typeof i18n.locales)[number] | undefined;
 
+export const prerender = true;
+
 export const getStaticPaths = (async () => {
-  const pages = await getCollection("cv");
+    const pages = await getCollection("cv");
 
-  const paths = pages.map((page) => {
-    const [lang] = page.id.split("/");
-    const rest = i18n.defaultLocale === lang ? undefined : lang;
-    return { params: { lang: rest as Languages }, props: page.data };
-  });
+    const paths = pages.map((page) => {
+        const [lang] = page.id.split("/");
+        const rest = i18n.defaultLocale === lang ? undefined : lang;
+        return { params: { lang: rest as Languages }, props: page.data };
+    });
 
-  return paths;
+    return paths;
 }) satisfies GetStaticPaths;
 
 const { lang } = Astro.params;
@@ -37,28 +40,29 @@ const rContent = useTranslation(lang ?? i18n.defaultLocale);
 ---
 
 <Layout title={rContent.pageTitle(name, label)}>
-  <main>
-    <Hero basics={basics} />
-    <About title={rContent.sections.about} basics={basics} />
-    <Experience title={rContent.sections.experience} work={work} />
-    <Projects title={rContent.sections.projects} projects={projects} />
-    <Education title={rContent.sections.education} education={education} />
-    <Skills title={rContent.sections.skills} skills={skills} />
-  </main>
+    <main>
+        <Login />
+        <Hero basics={basics} />
+        <About title={rContent.sections.about} basics={basics} />
+        <Experience title={rContent.sections.experience} work={work} />
+        <Projects title={rContent.sections.projects} projects={projects} />
+        <Education title={rContent.sections.education} education={education} />
+        <Skills title={rContent.sections.skills} skills={skills} />
+    </main>
 
-  <KeyboardManager />
+    <KeyboardManager />
 </Layout>
 
 <style>
-  main {
-    padding: 4rem;
-    margin: auto;
-    width: 100%;
-  }
-
-  @media (width <= 700px) {
     main {
-      padding: 2rem;
+        padding: 4rem;
+        margin: auto;
+        width: 100%;
     }
-  }
+
+    @media (width <= 700px) {
+        main {
+            padding: 2rem;
+        }
+    }
 </style>

@@ -10,6 +10,10 @@ export const uiContent = {
       publications: 'Publicaciones',
       references: 'Referencias'
     },
+    errors: {
+      notFound: 'No se encontró la página',
+      goBack: 'Volver'
+    },
     current: 'Actualidad',
     visit: 'Visitar',
     pageTitle: (name: string, label: string) => `Portafolio de ${name} - ${label}`,
@@ -67,6 +71,10 @@ export const uiContent = {
       awards: 'Awards',
       publications: 'Publications',
       references: 'References'
+    },
+    errors: {
+      notFound: 'Page not found',
+      goBack: 'Go back'
     },
     current: 'Current',
     visit: 'Visit',
