@@ -6,11 +6,11 @@ export interface CV {
   awards: Awards[]
   certificates: Certificates[]
   publications: Publications[]
-  skills: Skills[]
+  skills: Skill[]
   languages: Languages[]
   interests: Interests[]
   references: References[]
-  projects: Projects[]
+  projects: Project[]
 }
 
 interface Basics {
@@ -61,7 +61,7 @@ interface Volunteer {
   highlights: Highlight
 }
 
-interface Skills {
+interface Skill {
   name: string
   level: string
   keywords: string[]
@@ -123,7 +123,7 @@ type Language =
   | 'Bengali'
   | string
 
-interface Projects {
+interface Project {
   name: string
   isActive: boolean
   description: string
