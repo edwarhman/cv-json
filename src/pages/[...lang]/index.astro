@@ -12,7 +12,7 @@ const uiContent = useTranslation(lang)
 
 <Layout title="Portafolio">
     <div class="editor-container">
-        <main class="editor">
+        <main class="editor no-print">
             <Form client:load />
         </main>
         <aside class="preview">
@@ -25,5 +25,14 @@ const uiContent = useTranslation(lang)
     .editor-container {
         display: flex;
         min-height: 100vh;
+    }
+
+    .editor {
+        min-width: 300px;
+    }
+
+    .preview {
+        padding-left: 1rem;
+        flex-grow: 1;
     }
 </style>

@@ -1,6 +1,7 @@
 import { cvItems, updateCv } from "@/core/stores/cv.store";
 import type { CV } from "@/cv";
 import { useStore } from "@nanostores/react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 export default function Form() {
@@ -12,8 +13,11 @@ export default function Form() {
 
     function onChange(event: any) {
         updateCv(getValues())
-        console.log(getValues());
     }
+
+    useEffect(() => {
+        updateCv(getValues())
+    }, [])
 
     return (
         <form className="form" action="#" onChange={onChange} onError={(e) => console.log(e)} onSubmit={(e) => console.log(e)}>
@@ -25,6 +29,11 @@ export default function Form() {
                 <label>
                     Image
                     <input {...register("basics.image", { required: true })} />
+                </label>
+
+                <label>
+                    Label
+                    <input {...register("basics.label", { required: true })} />
                 </label>
 
                 <label>
@@ -48,7 +57,7 @@ export default function Form() {
                 </label>
 
                 <section>
-                    <h3>Location</h3>
+                    <h4>Location</h4>
 
                     <label>
                         Address
@@ -73,7 +82,7 @@ export default function Form() {
                 </section>
 
                 <section>
-                    <h3>Profiles</h3>
+                    <h4>Profiles</h4>
                     <label>
                         Network
                         <input {...register("basics.profiles.0.network", { required: true })} />

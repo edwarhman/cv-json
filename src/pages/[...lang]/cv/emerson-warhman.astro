@@ -9,7 +9,6 @@ import { getCollection } from "astro:content";
 import type { CV } from "@/cv";
 import { i18n } from "@/core/i18n/config";
 import { useTranslation } from "@/core/i18n/utils";
-import Login from "@/core/components/Login.astro";
 
 type Languages = (typeof i18n.locales)[number] | undefined;
 
@@ -36,7 +35,6 @@ const rContent = useTranslation(lang ?? i18n.defaultLocale);
 
 <Layout title={rContent.pageTitle(name, label)}>
     <main>
-        <Login />
         <Cv cv={cv} />
     </main>
 

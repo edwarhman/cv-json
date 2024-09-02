@@ -1,18 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-import About from "@/core/components/sections/About.astro";
-import Education from "@/core/components/sections/Education.astro";
-import Experience from "@/core/components/sections/Experience.astro";
-import Hero from "@/core/components/sections/Hero.astro";
-import Projects from "@/core/components/sections/Projects.astro";
-import Skills from "@/core/components/sections/Skills.astro";
 import KeyboardManager from "@/core/components/KeyboardManager.astro";
 
 import { getCollection } from "astro:content";
 import { i18n } from "@/core/i18n/config";
 import { useTranslation } from "@/core/i18n/utils";
-import Login from "@/core/components/Login.astro";
+import Cv from "@/core/components/Cv.astro";
 
 const { lang, id } = Astro.params;
 
@@ -22,21 +16,15 @@ function getCV(id: string) {
   return collection[0].data;
 }
 
-const { basics, education, work, projects, skills } = getCV(id ?? "");
-const { name, label } = basics;
+const cv = getCV(id ?? "");
+const { name, label } = cv.basics;
 
 const rContent = useTranslation((lang as "es" | "en") ?? i18n.defaultLocale);
 ---
 
 <Layout title={rContent.pageTitle(name, label)}>
   <main>
-    <Login />
-    <Hero basics={basics} />
-    <About title={rContent.sections.about} basics={basics} />
-    <Experience title={rContent.sections.experience} work={work} />
-    <Projects title={rContent.sections.projects} projects={projects} />
-    <Education title={rContent.sections.education} education={education} />
-    <Skills title={rContent.sections.skills} skills={skills} />
+    <Cv cv={cv} />
   </main>
 
   <KeyboardManager />

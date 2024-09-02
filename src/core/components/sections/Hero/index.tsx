@@ -2,12 +2,12 @@ import type { Basics } from "@/cv";
 import Section from "../../Section"
 import { useTranslation, type Locale, type UI_CONTENT } from "@/core/i18n/utils";
 import type { SocialIcon } from "@/types";
-import GitHub from "@/core/icons/GitHub.astro";
-import LinkedIn from "@/core/icons/LinkedIn.astro";
-import X from "@/core/icons/X.astro";
-import WorldMap from "@/core/icons/WorldMap.astro";
-import Mail from "@/core/icons/Mail.astro";
-import Phone from "@/core/icons/Phone.astro";
+import GitHub from "@/core/icons/GitHub";
+import LinkedIn from "@/core/icons/LinkedIn";
+import X from "@/core/icons/X";
+import WorldMap from "@/core/icons/WorldMap";
+import Mail from "@/core/icons/Mail";
+import Phone from "@/core/icons/Phone";
 import { uiContent as uiUtils } from "@/core/i18n/interface";
 import './styles.css'
 
@@ -32,12 +32,12 @@ export default function Hero({ basics, uiContent }: Props) {
 
     return (
         <Section>
-            <div className="container">
+            <div className="hero-container">
                 <div className="info">
                     <h1>{name}</h1>
                     <h2>{label}</h2>
                     <span>
-                        {/* <WorldMap /> */}
+                        <WorldMap />
                         {city}, {region}
                     </span>
                     <footer className="print">
@@ -52,7 +52,7 @@ export default function Hero({ basics, uiContent }: Props) {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    {/* <Mail /> */}
+                                    <Mail />
                                 </a>
                             )
                         }
@@ -64,7 +64,7 @@ export default function Hero({ basics, uiContent }: Props) {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    {/* <Phone /> */}
+                                    <Phone />
                                 </a>
                             )
                         }
@@ -72,14 +72,17 @@ export default function Hero({ basics, uiContent }: Props) {
                             profiles?.map(({ network, url, username }) => {
                                 const Icon = SOCIAL_ICONS[network]
 
+                                console.log({ Icon, network })
+
                                 return (
                                     <a
+                                        key={network + '-contact'}
                                         href={url}
                                         title={uiUtils[uiContent.locale as Locale].contact.socialMedia(name, network)}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        {/* <Icon /> */}
+                                        {Icon ? <Icon /> : network}
                                     </a>
                                 )
                             })
