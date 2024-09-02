@@ -18,6 +18,8 @@ export function getLangFromUrl(url: URL) {
   return defaultLang
 }
 
-export function useTranslation<L extends keyof typeof uiContent>(lang: L) {
+export type UI_CONTENT = keyof typeof uiContent
+
+export function useTranslation<L extends UI_CONTENT>(lang: L) {
   return uiContent[lang]
 }

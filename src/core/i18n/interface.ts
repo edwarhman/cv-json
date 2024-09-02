@@ -1,5 +1,19 @@
+export const contact = {
+  es: {
+    email: (name: string, email: string) => `Enviar un correo electrónico a ${name} al correo ${email}`,
+    phone: (name: string, phone: string) => `Llamar por teléfono ${name} al número ${phone}`,
+    socialMedia: (name: string, socialMedia: string) => `Visita el perfil de ${name} en ${socialMedia}`
+  },
+  en: {
+    email: (name: string, email: string) => `Send an email to ${name} at ${email}`,
+    phone: (name: string, phone: string) => `Call ${name} to the phone ${phone}`,
+    socialMedia: (name: string, socialMedia: string) => `Visit ${name}'s profile on ${socialMedia}`
+  }
+}
+
 export const uiContent = {
   es: {
+    locale: 'es',
     sections: {
       about: 'Sobre mí',
       experience: 'Experiencia laboral',
@@ -62,6 +76,7 @@ export const uiContent = {
     ]
   },
   en: {
+    locale: 'en',
     sections: {
       about: 'About me',
       experience: 'Work experience',

@@ -2,48 +2,27 @@
 import type { CV } from "@/cv";
 import Form from "@/editor/components/form";
 import Layout from "@/layouts/Layout.astro";
-import Cv from "@/preview/components/Cv.astro";
+import Cv from "@/core/components/Cv";
+import { i18n } from "@/core/i18n/config";
+import { useTranslation, type Locale } from "@/core/i18n/utils";
 
-
-const cv = {
-    basics: {
-        name: "Emerson David Warhman",
-        label: "Web Developer",
-        image: "/me.webp",
-        email: "edwarhman@gmail.com",
-        phone: "+58 4122021693",
-        url: "https://www.linkedin.com/in/emersonwarhman/",
-        summary: "Over 2 years of experience developing and maintaining web applications, servers, and database systems for the transportation, health, and finance sectors. Developed an application to request towing services for vehicles from a mobile device. Proficient in JavaScript, TypeScript, React.js, React Native, Expo, Ant Design, Express, MySQL, MongoDB, GraphQL. Experienced in efficiently and securely using AWS services (EC2, S3, RDS, Cloudfront, Lambda). A technology enthusiast, constantly expanding my knowledge to apply it to my projects.",
-        location: {
-            address: "",
-            postalCode: "1010",
-            city: "Caracas",
-            countryCode: "VE",
-            region: "Venezuela"
-        },
-    },
-} as CV
-
+const lang = Astro.params.lang as Locale ?? i18n.defaultLocale
+const uiContent = useTranslation(lang)
 ---
 
 <Layout title="Portafolio">
-    <div class="container">
+    <div class="editor-container">
         <main class="editor">
-            <Form  client:load />
+            <Form client:load />
         </main>
         <aside class="preview">
-            <!-- <Cv cv={cv} /> -->
+            <Cv client:load uiContent={uiContent} />
         </aside>
     </div>
 </Layout>
 
-<script>
-    const $cv = document.querySelector('.preview')
-    console.log($cv?.firstChild)
-</script>
-
 <style>
-    .container {
+    .editor-container {
         display: flex;
         min-height: 100vh;
     }
