@@ -1,4 +1,4 @@
-.hero-container {
+.heroContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -6,33 +6,33 @@
     gap: 1rem;
 }
 
-.hero-container .info {
+.heroContainer .info {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding-right: 32px;
 }
 
-.hero-container h1 {
+.heroContainer h1 {
     font-weight: 400;
     font-size: 2rem;
 }
 
-.hero-container h2 {
+.heroContainer h2 {
     color: #444;
     font-weight: 500;
     font-size: 1.1rem;
     text-wrap: balance;
 }
 
-.hero-container img {
+.heroContainer img {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     width: 178px;
     border-radius: 16px;
 }
 
-.hero-container span {
+.heroContainer span {
     color: #666;
     display: flex;
     align-items: center;
@@ -41,7 +41,7 @@
     letter-spacing: -0.05rem;
 }
 
-.hero-container footer {
+.heroContainer footer {
     color: #555;
     font-size: 0.65rem;
     display: flex;
@@ -49,7 +49,7 @@
     margin-top: 8px;
 }
 
-.hero-container footer a {
+.heroContainer footer a {
     color: #777;
     display: inline-flex;
     align-items: center;
@@ -63,41 +63,41 @@
     position: relative;
 }
 
-.hero-container footer a::after {
+.heroContainer footer a::after {
     content: "";
     width: 100%;
     height: 100%;
     position: absolute;
 }
 
-.hero-container footer a:hover {
+.heroContainer footer a:hover {
     background: #eee;
     border: 1px solid #ddd;
 }
 
 @media (width <=700px) {
-    .hero-container .container {
+    .heroContainer .container {
         flex-direction: column-reverse;
     }
 
-    .hero-container .info {
+    .heroContainer .info {
         justify-content: center;
         align-items: center;
         padding-right: 0;
         text-align: center;
     }
 
-    .hero-container figure {
+    .heroContainer figure {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .hero-container h2 {
+    .heroContainer h2 {
         text-wrap: balance;
     }
 
-    .hero-container figure {
+    .heroContainer figure {
         margin: 0 auto;
     }
 }

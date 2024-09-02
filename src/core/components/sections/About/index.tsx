@@ -1,5 +1,5 @@
 import type { Basics } from "@/cv";
-import Section from "../../Section";
+import Section from "../../Section/Section";
 
 interface Props {
     title: string;

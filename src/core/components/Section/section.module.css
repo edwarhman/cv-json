@@ -1,9 +1,9 @@
-.cv-section {
+.cvSection {
     width: 700px;
     margin: 0 auto 48px;
 }
 
-.cv-section h2 {
+.cvSection h2 {
     margin-bottom: 8px;
     font-weight: 700;
     line-height: 1.5;
@@ -11,7 +11,7 @@
 }
 
 @media (width <=700px) {
-    .cv-section {
+    .cvSection {
         margin-bottom: 38px;
     }
 }

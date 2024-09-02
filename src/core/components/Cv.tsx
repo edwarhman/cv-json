@@ -1,5 +1,5 @@
 import type { CV } from "@/cv";
-import Hero from "./sections/Hero";
+import Hero from "./sections/Hero/Hero";
 import type { Locale, UI_CONTENT } from "../i18n/utils";
 import { useStore } from "@nanostores/react";
 import { cvItems } from "../stores/cv.store";

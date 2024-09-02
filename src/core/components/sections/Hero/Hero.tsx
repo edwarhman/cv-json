@@ -1,5 +1,5 @@
 import type { Basics } from "@/cv";
-import Section from "../../Section"
+import Section from "../../Section/Section"
 import { useTranslation, type Locale, type UI_CONTENT } from "@/core/i18n/utils";
 import type { SocialIcon } from "@/types";
 import GitHub from "@/core/icons/GitHub";
@@ -9,7 +9,7 @@ import WorldMap from "@/core/icons/WorldMap";
 import Mail from "@/core/icons/Mail";
 import Phone from "@/core/icons/Phone";
 import { uiContent as uiUtils } from "@/core/i18n/interface";
-import './styles.css'
+import styles from './hero.module.css'
 
 interface Props {
     basics: Basics;
@@ -32,7 +32,7 @@ export default function Hero({ basics, uiContent }: Props) {
 
     return (
         <Section>
-            <div className="hero-container">
+            <div className={styles.heroContainer}>
                 <div className="info">
                     <h1>{name}</h1>
                     <h2>{label}</h2>

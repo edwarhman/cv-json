@@ -1,4 +1,4 @@
-import './styles.css'
+import styles from './section.module.css'
 
 interface Props {
     title?: string;
@@ -7,7 +7,7 @@ interface Props {
 
 export default function Section({ children, title }: Props) {
     return (
-        <div className="cv-section">
+        <div className={styles.cvSection}>
             {title && <h2>{title}</h2>}
             {children}
         </div>
