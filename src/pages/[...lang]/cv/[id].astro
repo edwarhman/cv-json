@@ -1,0 +1,45 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+import KeyboardManager from "@/core/components/KeyboardManager.astro";
+
+import { getCollection } from "astro:content";
+import { i18n } from "@/core/i18n/config";
+import { useTranslation } from "@/core/i18n/utils";
+import Cv from "@/core/components/Cv.astro";
+
+const { lang, id } = Astro.params;
+
+const collection = await getCollection("cv");
+
+function getCV(id: string) {
+  return collection[0].data;
+}
+
+const cv = getCV(id ?? "");
+const { name, label } = cv.basics;
+
+const rContent = useTranslation((lang as "es" | "en") ?? i18n.defaultLocale);
+---
+
+<Layout title={rContent.pageTitle(name, label)}>
+  <main>
+    <Cv cv={cv} />
+  </main>
+
+  <KeyboardManager />
+</Layout>
+
+<style>
+  main {
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+  }
+
+  @media (width <= 700px) {
+    main {
+      padding: 2rem;
+    }
+  }
+</style>

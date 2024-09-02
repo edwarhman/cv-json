@@ -1,12 +1,12 @@
 {
   "basics": {
-    "name": "Emerson David Warhman Cardona",
+    "name": "Emerson David Warhman",
     "label": "Desarrollador Web y móvil",
     "image": "/me.webp",
     "email": "edwarhman@gmail.com",
     "phone": "+58 4122021693",
     "url": "https://www.linkedin.com/in/emersonwarhman/",
-    "summary": "Más de 2 años de experiencia desarrollando aplicaciones web y móviles para los sectores del transporte, la salud y las finanzas. Desarrollé una aplicación para poder solicitar servicios de remolque para vehículos desde el dispositivo móvil. Domino las tecnologías Javascript, Typescript, React.js, React Native, Expo, Ant Design, Express, MySQL, MongoDB, GraphQL. Soy un gran entusiasta de la tecnología, lo cual me motiva a ir más allá, ampliando constantemente mis conocimientos para poder aplicarlos en mis proyectos.",   
+    "summary": "Más de 2 años de experiencia desarrollando aplicaciones web y móviles para los sectores del transporte, la salud y las finanzas. Desarrollé una aplicación para poder solicitar servicios de remolque para vehículos desde el dispositivo móvil. Domino las tecnologías Javascript, Typescript, React.js, React Native, Expo, Ant Design, Express, MySQL, MongoDB, GraphQL. Soy un gran entusiasta de la tecnología, lo cual me motiva a ir más allá, ampliando constantemente mis conocimientos para poder aplicarlos en mis proyectos.",
     "location": {
       "address": "",
       "postalCode": "1010",
@@ -20,7 +20,6 @@
         "username": "edwarhman",
         "url": "https://www.linkedin.com/in/emersonwarhman/"
       },
-      
       {
         "network": "GitHub",
         "username": "edwarhman",
@@ -62,142 +61,177 @@
       ]
     }
   ],
-  "volunteer": [{
-    "organization": "Organization",
-    "position": "Volunteer",
-    "url": "https://organization.com/",
-    "startDate": "2012-01-01",
-    "endDate": "2013-01-01",
-    "summary": "Description…",
-    "highlights": [
-      "Awarded 'Volunteer of the Month'"
-    ]
-  }],
-  "education": [
-  {
-    "institution": "EYSS Academy",
-    "url": "https://www.eyss.io/edu-eyss/",
-    "area": "Desarrollador Blockchain",
-    "studyType": "Curso",
-    "startDate": "2022-02-4",
-    "endDate": "2022-4-28",
-    "score": "4.0",
-    "courses": [
-      "DB1101 - Basic SQL"
-    ]
-  },
-  {
-    "institution": "EF SET",
-    "url": "https://cert.efset.org/3fNjyH",
-    "area": "English C1 Advanced",
-    "studyType": "Course",
-    "startDate": "2022-01-6",
-    "endDate": "2022-01-06",
-    "score": "4.0",
-    "courses": [
-      "DB1101 - Basic SQL"
-    ]
-  },
+  "volunteer": [
     {
-    "institution": "Universidad Central de Venezuela",
-    "url": "http://www.ucv.ve/",
-    "area": "Ingeniero Eléctrico",
-    "studyType": "Bachelor",
-    "startDate": null,
-    "endDate": null,
-    "score": "4.0",
-    "courses": [
-      "DB1101 - Basic SQL"
-    ]
-  }],
-  "awards": [{
-    "title": "Award",
-    "date": "2014/11/01",
-    "awarder": "Company",
-    "summary": "There is no spoon."
-  }],
-  "certificates": [{
-    "name": "Certificate",
-    "date": "2021/11/07",
-    "issuer": "Company",
-    "url": "https://certificate.com"
-  }],
-  "publications": [{
-    "name": "Publication",
-    "publisher": "Company",
-    "releaseDate": "2014/10/01",
-    "url": "https://publication.com",
-    "summary": "Description…"
-  }],
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": [
+        "Awarded 'Volunteer of the Month'"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "EYSS Academy",
+      "url": "https://www.eyss.io/edu-eyss/",
+      "area": "Desarrollador Blockchain",
+      "studyType": "Curso",
+      "startDate": "2022-02-4",
+      "endDate": "2022-4-28",
+      "score": "4.0",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    },
+    {
+      "institution": "EF SET",
+      "url": "https://cert.efset.org/3fNjyH",
+      "area": "English C1 Advanced",
+      "studyType": "Course",
+      "startDate": "2022-01-6",
+      "endDate": "2022-01-06",
+      "score": "4.0",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    },
+    {
+      "institution": "Universidad Central de Venezuela",
+      "url": "http://www.ucv.ve/",
+      "area": "Ingeniero Eléctrico",
+      "studyType": "Bachelor",
+      "startDate": null,
+      "endDate": null,
+      "score": "4.0",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014/11/01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021/11/07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014/10/01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }
+  ],
   "skills": [
     {
       "name": "HTML",
       "level": "Master",
       "keywords": [
-        "Desarrollo Web", "Frontend"
+        "Desarrollo Web",
+        "Frontend"
       ]
     },
     {
       "name": "CSS",
       "level": "Master",
       "keywords": [
-        "Desarrollo Web", "Frontend", "Diseño Responsive"
+        "Desarrollo Web",
+        "Frontend",
+        "Diseño Responsive"
       ]
     },
     {
       "name": "JavaScript",
       "level": "Master",
       "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "Fullstack"
+        "Desarrollo Web",
+        "Frontend",
+        "Backend",
+        "Fullstack"
       ]
     },
     {
       "name": "Tailwind",
       "level": "Avanzado",
       "keywords": [
-        "Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"
+        "Desarrollo Web",
+        "Frontend",
+        "CSS Framework",
+        "Diseño Responsive"
       ]
     },
     {
       "name": "TypeScript",
       "level": "Avanzado",
       "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"
+        "Desarrollo Web",
+        "Frontend",
+        "Backend",
+        "JavaScript Superset"
       ]
     },
     {
       "name": "Node",
       "level": "Avanzado",
       "keywords": [
-        "Desarrollo Web", "Backend", "JavaScript", "Servidor"
+        "Desarrollo Web",
+        "Backend",
+        "JavaScript",
+        "Servidor"
       ]
     },
     {
       "name": "MySQL",
       "level": "Avanzado",
       "keywords": [
-        "Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
       ]
     },
     {
       "name": "Git",
       "level": "Avanzado",
       "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente"
+        "Control de Versiones",
+        "Colaboración",
+        "Código Fuente"
       ]
     },
     {
       "name": "GitHub",
       "level": "Avanzado",
       "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente", "Git"
+        "Control de Versiones",
+        "Colaboración",
+        "Código Fuente",
+        "Git"
       ]
     },
     {
       "name": "React",
       "level": "Avanzado",
       "keywords": [
-        "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
+        "Desarrollo Web",
+        "Frontend",
+        "JavaScript Library",
+        "UI"
       ]
     }
   ],
@@ -211,17 +245,21 @@
       "fluency": "Advanced"
     }
   ],
-  "interests": [{
-    "name": "Wildlife",
-    "keywords": [
-      "Ferrets",
-      "Unicorns"
-    ]
-  }],
-  "references": [{
-    "name": "Jane Doe",
-    "reference": "Reference…"
-  }],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }
+  ],
   "projects": [
     {
       "name": "Unete Neopediátrica",

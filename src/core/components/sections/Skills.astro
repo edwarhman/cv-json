@@ -1,0 +1,74 @@
+---
+import Section from "../Section.astro"
+import HTML from "@/core/icons/html.astro"
+import CSS from "@/core/icons/css.astro"
+import JavaScript from "@/core/icons/javascript.astro"
+import TypeScript from "@/core/icons/type.astro"
+import React from "@/core/icons/react.astro"
+import Node from "@/core/icons/node.astro"
+import MySQL from "@/core/icons/sql.astro"
+import Git from "@/core/icons/git.astro"
+import GitHub from "@/core/icons/GitHub"
+import Tailwind from "@/core/icons/tailwind.astro"
+import Next from "@/core/icons/next.astro"
+import Swift from "@/core/icons/swift.astro"
+import SwiftUI from "@/core/icons/swiftui.astro"
+import Kotlin from "@/core/icons/kotlin.astro"
+import Flutter from "@/core/icons/flutter.astro"
+import type { Skill } from "@/cv"
+
+const SKILLS_ICONS: Record<string, any> = {
+  HTML,
+  CSS,
+  JavaScript,
+  TypeScript,
+  React,
+  Node,
+  MySQL,
+  Git,
+  GitHub,
+  Next,
+  Tailwind,
+  Swift,
+  SwiftUI,
+  Kotlin,
+  Flutter,
+}
+
+interface Props {
+  title: string;
+  skills: Skill[];
+}
+const { title, skills } = Astro.props
+---
+
+<Section title={title}>
+  <ul>
+    {
+      skills.map(({ name }) => {
+        const iconName = name === "Next.js" ? "Next" : name
+        const Icon = SKILLS_ICONS[iconName]
+      })
+    }
+  </ul>
+</Section>
+
+<style>
+  ul {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  li {
+    align-items: center;
+    background: #eee;
+    border-radius: 6px;
+    color: black;
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: 500;
+    gap: 4px;
+    padding: 0.2rem 0.6rem;
+  }
+</style>

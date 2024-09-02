@@ -1,0 +1,56 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "@/layouts/Layout.astro";
+
+import Cv from "@/core/components/Cv.astro";
+import KeyboardManager from "@/core/components/KeyboardManager.astro";
+
+import { getCollection } from "astro:content";
+import type { CV } from "@/cv";
+import { i18n } from "@/core/i18n/config";
+import { useTranslation } from "@/core/i18n/utils";
+
+type Languages = (typeof i18n.locales)[number] | undefined;
+
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
+    const pages = await getCollection("cv");
+
+    const paths = pages.map((page) => {
+        const [lang] = page.id.split("/");
+        const rest = i18n.defaultLocale === lang ? undefined : lang;
+        return { params: { lang: rest as Languages }, props: page.data };
+    });
+
+    return paths;
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params;
+const cv = Astro.props as CV;
+const { name, label } = cv.basics;
+
+const rContent = useTranslation(lang ?? i18n.defaultLocale);
+---
+
+<Layout title={rContent.pageTitle(name, label)}>
+    <main>
+        <Cv cv={cv} />
+    </main>
+
+    <KeyboardManager />
+</Layout>
+
+<style>
+    main {
+        padding: 4rem;
+        margin: auto;
+        width: 100%;
+    }
+
+    @media (width <= 700px) {
+        main {
+            padding: 2rem;
+        }
+    }
+</style>

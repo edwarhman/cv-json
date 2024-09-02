@@ -1,0 +1,44 @@
+---
+import { getLangFromUrl, useTranslation } from "@/core/i18n/utils";
+import Layout from "@/layouts/Layout.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const uiContent = useTranslation(lang);
+const homeUrl = getRelativeLocaleUrl(lang, "/");
+---
+
+<Layout title="Not found">
+    <main>
+        <h1>{uiContent.errors.notFound}</h1>
+        <a href={homeUrl}>{uiContent.errors.goBack}</a>
+    </main>
+</Layout>
+
+<style>
+    h1 {
+        font-family:
+            Menlo,
+            Monaco,
+            Lucida Console,
+            Liberation Mono,
+            DejaVu Sans Mono,
+            Bitstream Vera Sans Mono,
+            Courier New,
+            monospace,
+            serif;
+    }
+
+    a {
+        color: #777;
+        font-size: larger;
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+    }
+</style>
