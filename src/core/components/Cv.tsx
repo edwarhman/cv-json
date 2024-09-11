@@ -6,6 +6,7 @@ import { cvItems } from "../stores/cv.store";
 import About from "./sections/About";
 import Experience from "./sections/Experience/Experience";
 import Education from "./sections/Education/Education";
+import Projects from "./sections/Projects/Projects";
 
 interface Props {
     cv?: CV;
@@ -22,6 +23,7 @@ export default function Cv({ cv, uiContent }: Props) {
             {$cvItems.basics != null && <About title={uiContent.sections.about} basics={$cvItems.basics} />}
             {$cvItems.work != null && <Experience works={$cvItems.work} uiContent={uiContent} />}
             {$cvItems.education != null && <Education education={$cvItems.education} uiContent={uiContent} />}
+            {$cvItems.projects != null && <Projects projects={$cvItems.projects} uiContent={uiContent} />}
         </div>
     )
 }

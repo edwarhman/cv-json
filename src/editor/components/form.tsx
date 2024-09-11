@@ -143,6 +143,33 @@ export default function Form() {
                     <input {...register("education.0.area", { required: true })} />
                 </label>
             </section>
+            <section>
+                <h4>Projects</h4>
+                <label>
+                    Name
+                    <input {...register("projects.0.name", { required: true })} />
+                </label>
+                <label>
+                    Url
+                    <input {...register("projects.0.url", { required: true })} />
+                </label>
+                <label>
+                    Description
+                    <textarea {...register("projects.0.description", { required: true })} />
+                </label>
+                <label>
+                    Highlights
+                    <textarea {...register("projects.0.highlights.0", { required: true })} />
+                </label>
+                <label>
+                    Is Active
+                    <input {...register("projects.0.isActive", { required: true })} />
+                </label>
+                <label>
+                    Github
+                    <input {...register("projects.0.github", { required: true })} />
+                </label>
+            </section>
             <button type="submit">Send</button>
         </form>
     );
