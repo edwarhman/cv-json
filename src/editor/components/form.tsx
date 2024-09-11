@@ -96,12 +96,35 @@ export default function Form() {
                         <input {...register("basics.profiles.0.url", { required: true })} />
                     </label>
                 </section>
-
             </section>
-
+            <section>
+                <h4>Work</h4>
+                <label>
+                    Name
+                    <input {...register("work.0.name", { required: true })} />
+                </label>
+                <label>
+                    Position
+                    <input {...register("work.0.position", { required: true })} />
+                </label>
+                <label>
+                    Url
+                    <input {...register("work.0.url", { required: true })} />
+                </label>
+                <label>
+                    Start Date
+                    <input {...register("work.0.startDate", { required: true })} />
+                </label>
+                <label>
+                    End Date
+                    <input {...register("work.0.startDate", { required: true })} />
+                </label>
+                <label>
+                    Summary
+                    <textarea {...register("work.0.summary", { required: true })} />
+                </label>
+            </section>
             <button type="submit">Send</button>
-            <style>
-            </style>
         </form>
     );
 }
