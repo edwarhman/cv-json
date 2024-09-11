@@ -5,6 +5,7 @@ import { useStore } from "@nanostores/react";
 import { cvItems } from "../stores/cv.store";
 import About from "./sections/About";
 import Experience from "./sections/Experience/Experience";
+import Education from "./sections/Education/Education";
 
 interface Props {
     cv?: CV;
@@ -20,6 +21,7 @@ export default function Cv({ cv, uiContent }: Props) {
             {$cvItems.basics != null && <Hero uiContent={uiContent} basics={$cvItems.basics} />}
             {$cvItems.basics != null && <About title={uiContent.sections.about} basics={$cvItems.basics} />}
             {$cvItems.work != null && <Experience works={$cvItems.work} uiContent={uiContent} />}
+            {$cvItems.education != null && <Education education={$cvItems.education} uiContent={uiContent} />}
         </div>
     )
 }

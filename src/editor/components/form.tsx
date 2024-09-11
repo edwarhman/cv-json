@@ -124,6 +124,25 @@ export default function Form() {
                     <textarea {...register("work.0.summary", { required: true })} />
                 </label>
             </section>
+            <section>
+                <h4>Education</h4>
+                <label>
+                    Institution
+                    <input {...register("education.0.institution", { required: true })} />
+                </label>
+                <label>
+                    Start Date
+                    <input {...register("education.0.startDate", { required: true })} />
+                </label>
+                <label>
+                    End Date
+                    <input {...register("education.0.endDate", { required: true })} />
+                </label>
+                <label>
+                    Area
+                    <input {...register("education.0.area", { required: true })} />
+                </label>
+            </section>
             <button type="submit">Send</button>
         </form>
     );

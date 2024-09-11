@@ -1,0 +1,29 @@
+  .education ul {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+  }
+
+  .education article h3 {
+      font-weight: 500;
+      color: #111;
+  }
+
+  .education header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4px;
+  }
+
+  .education time {
+      color: #555;
+      font-size: 0.85rem;
+      min-width: 102px;
+  }
+
+  @media (width <=700px) {
+      .education time {
+          text-align: right;
+      }
+  }
