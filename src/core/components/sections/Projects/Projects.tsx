@@ -39,7 +39,7 @@ export default function Projects({ uiContent, projects }: Props) {
                                                 <p>{description}</p>
                                             </header>
                                             <footer>
-                                                {highlights.length > 0 && highlights?.map((highlight) => {
+                                                {highlights?.map((highlight) => {
                                                     return <span>{highlight}</span>
                                                 })}
                                             </footer>

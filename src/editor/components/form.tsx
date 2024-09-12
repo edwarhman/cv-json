@@ -1,15 +1,37 @@
-import { cvItems, updateCv } from "@/core/stores/cv.store";
-import type { CV } from "@/cv";
-import { useStore } from "@nanostores/react";
+import FormFieldsList from "@/core/components/FormFieldsList";
+import { updateCv } from "@/core/stores/cv.store";
+import type { CV, Education, Project, Work } from "@/cv";
 import { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
+
 
 export default function Form() {
-    const { handleSubmit, register, getValues } = useForm<CV>();
+    const { register, getValues, control } = useForm<CV>();
+    const {
+        fields: experienceFields,
+        append: appendExperience,
+        remove: removeExperience
+    } = useFieldArray({
+        control,
+        name: 'work'
+    })
+    const {
+        fields: educationFields,
+        append: appendEducation,
+        remove: removeEducation
+    } = useFieldArray({
+        control,
+        name: 'education'
+    })
+    const {
+        fields: projectFields,
+        append: appendProject,
+        remove: removeProject
+    } = useFieldArray({
+        control,
+        name: 'projects'
+    })
 
-    function onSubmit(data: any) {
-        console.log(data);
-    }
 
     function onChange(event: any) {
         updateCv(getValues())
@@ -17,7 +39,9 @@ export default function Form() {
 
     useEffect(() => {
         updateCv(getValues())
-    }, [])
+    })
+
+    console.log('form: ', getValues())
 
     return (
         <form className="form" action="#" onChange={onChange} onError={(e) => console.log(e)} onSubmit={(e) => console.log(e)}>
@@ -99,76 +123,111 @@ export default function Form() {
             </section>
             <section>
                 <h4>Work</h4>
-                <label>
-                    Name
-                    <input {...register("work.0.name", { required: true })} />
-                </label>
-                <label>
-                    Position
-                    <input {...register("work.0.position", { required: true })} />
-                </label>
-                <label>
-                    Url
-                    <input {...register("work.0.url", { required: true })} />
-                </label>
-                <label>
-                    Start Date
-                    <input {...register("work.0.startDate", { required: true })} />
-                </label>
-                <label>
-                    End Date
-                    <input {...register("work.0.startDate", { required: true })} />
-                </label>
-                <label>
-                    Summary
-                    <textarea {...register("work.0.summary", { required: true })} />
-                </label>
+                {
+                    experienceFields.map((field, index) => {
+                        return (
+                            <div key={field.id}>
+                                <label>
+                                    Name
+                                    <input {...register(`work.${index}.name`, { required: true })} />
+                                </label>
+                                <label>
+                                    Position
+                                    <input {...register(`work.${index}.position`, { required: true })} />
+                                </label>
+                                <label>
+                                    Url
+                                    <input {...register(`work.${index}.url`, { required: true })} />
+                                </label>
+                                <label>
+                                    Start Date
+                                    <input {...register(`work.${index}.startDate`, { required: true })} />
+                                </label>
+                                <label>
+                                    End Date
+                                    <input {...register(`work.${index}.endDate`, { required: true })} />
+                                </label>
+                                <label>
+                                    Summary
+                                    <textarea {...register(`work.${index}.summary`, { required: true })} />
+                                </label>
+                                <button type="button" onClick={() => removeExperience(index)}>Remove Experience</button>
+                            </div>
+                        )
+                    })
+                }
+                <button type="button" onClick={() => appendExperience({} as Work)}>Add Experience</button>
             </section>
             <section>
                 <h4>Education</h4>
-                <label>
-                    Institution
-                    <input {...register("education.0.institution", { required: true })} />
-                </label>
-                <label>
-                    Start Date
-                    <input {...register("education.0.startDate", { required: true })} />
-                </label>
-                <label>
-                    End Date
-                    <input {...register("education.0.endDate", { required: true })} />
-                </label>
-                <label>
-                    Area
-                    <input {...register("education.0.area", { required: true })} />
-                </label>
+                {
+                    educationFields.map((field, index) => {
+                        return (
+                            <div key={field.id}>
+                                <label>
+                                    Institution
+                                    <input {...register(`education.${index}.institution`, { required: true })} />
+                                </label>
+                                <label>
+                                    Start Date
+                                    <input {...register(`education.${index}.startDate`, { required: true })} />
+                                </label>
+                                <label>
+                                    End Date
+                                    <input {...register(`education.${index}.endDate`, { required: true })} />
+                                </label>
+                                <label>
+                                    Area
+                                    <input {...register(`education.${index}.area`, { required: true })} />
+                                </label>
+                                <button type="button" onClick={() => removeEducation(index)}>Remove Education</button>
+                            </div>
+                        )
+                    })
+                }
+                <button type="button" onClick={() => appendEducation({} as Education)}>Add Education</button>
             </section>
             <section>
                 <h4>Projects</h4>
-                <label>
-                    Name
-                    <input {...register("projects.0.name", { required: true })} />
-                </label>
-                <label>
-                    Url
-                    <input {...register("projects.0.url", { required: true })} />
-                </label>
-                <label>
-                    Description
-                    <textarea {...register("projects.0.description", { required: true })} />
-                </label>
-                <label>
-                    Highlights
-                    <textarea {...register("projects.0.highlights.0", { required: true })} />
-                </label>
-                <label>
-                    Is Active
-                    <input {...register("projects.0.isActive", { required: true })} />
-                </label>
-                <label>
-                    Github
-                    <input {...register("projects.0.github", { required: true })} />
-                </label>
+                {
+                    projectFields.map((field, index) => {
+                        return (
+                            <div key={field.id}>
+                                <label>
+                                    Name
+                                    <input {...register(`projects.${index}.name`, { required: true })} />
+                                </label>
+                                <label>
+                                    Url
+                                    <input {...register(`projects.${index}.url`, { required: true })} />
+                                </label>
+                                <label>
+                                    Description
+                                    <textarea {...register(`projects.${index}.description`, { required: true })} />
+                                </label>
+                                <label>
+                                    Highlights
+                                    <FormFieldsList
+                                        control={control}
+                                        name={`projects.${index}.highlights`}
+                                        render={({ index: fieldIndex }) => <input type="text" placeholder="Highlights" {...register(`projects.${index}.highlights.${fieldIndex}`, { required: true })} />}
+                                        onChange={() => updateCv(getValues())}
+                                    />
+                                </label>
+                                <label>
+                                    Is Active
+                                    <input {...register(`projects.${index}.isActive`, { required: true })} />
+                                </label>
+                                <label>
+                                    Github
+                                    <input {...register(`projects.${index}.github`, { required: true })} />
+                                </label>
+                                <button type="button" onClick={() => removeProject(index)}>Remove Project</button>
+                            </div>
+                        )
+                    })
+                }
+                <button type="button" onClick={() => appendProject({} as Project)}>Add Project</button>
             </section>
             <button type="submit">Send</button>
         </form>
