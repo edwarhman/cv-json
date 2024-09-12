@@ -1,26 +1,30 @@
-import { cvItems, updateCv } from "@/core/stores/cv.store";
-import type { CV } from "@/cv";
-import { useStore } from "@nanostores/react";
+import FormFieldsList from "@/core/components/FormFieldsList";
+import { updateCv } from "@/core/stores/cv.store";
+import type { CV, Education, Project, Work } from "@/cv";
 import { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
+import WorkForm from "./WorkForm";
+import EducationForm from "./EducationForm";
+import ProjectsForm from "./ProjectsForm";
+import ProfileForm from "./ProfileForm";
+
 
 export default function Form() {
-    const { handleSubmit, register, getValues } = useForm<CV>();
+    const { register, getValues, control } = useForm<CV>();
 
-    function onSubmit(data: any) {
-        console.log(data);
-    }
 
-    function onChange(event: any) {
+    function handleFormChange(event: any) {
         updateCv(getValues())
     }
 
     useEffect(() => {
         updateCv(getValues())
-    }, [])
+    })
+
+    console.log('form: ', getValues())
 
     return (
-        <form className="form" action="#" onChange={onChange} onError={(e) => console.log(e)} onSubmit={(e) => console.log(e)}>
+        <form className="form" action="#" onChange={handleFormChange} onError={(e) => console.log(e)} onSubmit={(e) => console.log(e)}>
             <section>
                 <label>Name
                     <input {...register("basics.name", { required: true })} />
@@ -83,25 +87,42 @@ export default function Form() {
 
                 <section>
                     <h4>Profiles</h4>
-                    <label>
-                        Network
-                        <input {...register("basics.profiles.0.network", { required: true })} />
-                    </label>
-                    <label>
-                        Username
-                        <input {...register("basics.profiles.0.username", { required: true })} />
-                    </label>
-                    <label>
-                        Url
-                        <input {...register("basics.profiles.0.url", { required: true })} />
-                    </label>
+                    <FormFieldsList
+                        control={control}
+                        name="basics.profiles"
+                        render={({ index }) => <ProfileForm register={register} index={index} />}
+                        onChange={handleFormChange}
+                    />
                 </section>
-
             </section>
-
+            <section>
+                <h4>Work</h4>
+                <FormFieldsList
+                    control={control}
+                    name="work"
+                    render={({ index }) => <WorkForm register={register} index={index} />}
+                    onChange={handleFormChange}
+                />
+            </section>
+            <section>
+                <h4>Education</h4>
+                <FormFieldsList
+                    control={control}
+                    name="education"
+                    render={({ index }) => <EducationForm register={register} index={index} />}
+                    onChange={handleFormChange}
+                />
+            </section>
+            <section>
+                <h4>Projects</h4>
+                <FormFieldsList
+                    control={control}
+                    name="projects"
+                    render={({ index }) => <ProjectsForm register={register} index={index} control={control} onChange={() => updateCv(getValues())} />}
+                    onChange={handleFormChange}
+                />
+            </section>
             <button type="submit">Send</button>
-            <style>
-            </style>
         </form>
     );
 }
