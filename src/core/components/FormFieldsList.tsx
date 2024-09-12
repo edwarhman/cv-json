@@ -6,7 +6,7 @@ interface Props {
     name: string
     defaultValue?: any
     render: (props: { index: number }) => ReactNode
-    onChange?: () => any
+    onChange?: CallableFunction
 }
 
 export default function ({ control, name, defaultValue, render, onChange }: Props) {
