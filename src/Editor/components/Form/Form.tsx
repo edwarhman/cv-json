@@ -8,6 +8,7 @@ import EducationForm from "../EducationForm";
 import ProjectsForm from "../ProjectsForm";
 import ProfileForm from "../ProfileForm";
 import styles from './form.module.css'
+import Row from "@/core/components/Row";
 
 interface Props {
     initialValues: CV
@@ -72,29 +73,32 @@ export default function Form({ initialValues }: Props) {
 
                 <section>
                     <h4>Location</h4>
-
                     <label>
                         Address
                         <input {...register("basics.location.address", { required: true })} />
                     </label>
-                    <label>
-                        Postal Code
-                        <input {...register("basics.location.postalCode", { required: true })} />
-                    </label>
-                    <label>
-                        City
-                        <input {...register("basics.location.city", { required: true })} />
-                    </label>
-                    <label>
-                        Country Code
-                        <input {...register("basics.location.countryCode", { required: true })} />
-                    </label>
-                    <label>
-                        Region
-                        <input {...register("basics.location.region", { required: true })} />
-                    </label>
-                </section>
 
+                    <Row>
+                        <label>
+                            City
+                            <input {...register("basics.location.city", { required: true })} />
+                        </label>
+                        <label>
+                            Region
+                            <input {...register("basics.location.region", { required: true })} />
+                        </label>
+                    </Row>
+                    <Row>
+                        <label>
+                            Postal Code
+                            <input {...register("basics.location.postalCode", { required: true })} />
+                        </label>
+                        <label>
+                            Country Code
+                            <input {...register("basics.location.countryCode", { required: true })} />
+                        </label>
+                    </Row>
+                </section>
                 <section>
                     <h4>Social profiles</h4>
                     <FormFieldsList
