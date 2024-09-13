@@ -1,4 +1,4 @@
-import FormFieldsList from "@/core/components/FormFieldsList";
+import FormFieldsList from "@/core/components/FormFieldsList/FormFieldsList";
 import type { Control, UseFormRegister } from "react-hook-form";
 
 interface Props {
@@ -21,7 +21,7 @@ export default function ({ index, control, register, onChange }: Props) {
             </label>
             <label>
                 Description
-                <textarea {...register(`projects.${index}.description`, { required: true })} />
+                <textarea {...register(`projects.${index}.description`, { required: true })} maxLength={100} />
             </label>
             <label>
                 Highlights

@@ -1,0 +1,39 @@
+form {
+    padding: 1rem;
+}
+
+select {
+    padding: 1rem;
+    background-color: #fdfdfd;
+}
+
+input,
+select,
+textarea {
+    border-radius: 0.35rem;
+    padding: 0.85rem 0.5rem;
+    border: 1px solid #ddd;
+    margin-top: 0.4rem;
+}
+
+button {
+    border-radius: 0.35rem;
+    padding: 0.2rem;
+    border: 1px solid #ddd;
+    background-color: #fdfdfd;
+    line-height: 1;
+    font-size: 1rem;
+
+}
+
+textarea {
+    padding-top: 0.5rem;
+    line-height: 1.5;
+    min-height: 8rem;
+    resize: vertical;
+    color: #666;
+}
+
+label {
+    margin-bottom: 1.1rem;
+}

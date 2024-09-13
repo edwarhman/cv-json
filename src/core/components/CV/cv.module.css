@@ -1,0 +1,12 @@
+.cvContainer {
+    background-color: #fff;
+    width: 750px;
+    margin: 0 auto 48px;
+    padding: 3rem;
+}
+
+@media print {
+    .cvContainer {
+        padding: 0
+    }
+}

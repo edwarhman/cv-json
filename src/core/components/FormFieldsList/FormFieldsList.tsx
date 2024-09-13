@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 import { useFieldArray, type Control, type UseFormRegister } from "react-hook-form"
+import styles from './formFieldsList.module.css'
 
 interface Props {
     control: Control<any>
@@ -25,19 +26,23 @@ export default function ({ control, name, defaultValue, render, onChange }: Prop
         onChange?.()
     }
     return (
-        <>
+        <div className={styles.formFieldsList}>
             {
                 fields.map((field, index) => {
                     const children = render({ index })
                     return (
-                        <div key={field.id}>
-                            {children}
-                            <button type="button" onClick={() => handleRemove(index)}>Remove</button>
+                        <div key={field.id} className={styles.childrenWrapper}>
+                            <button type="button" onClick={() => handleRemove(index)}>&times;</button>
+                            <div className={styles.children}>
+                                {children}
+                            </div>
                         </div>
                     )
                 })
             }
-            <button type="button" onClick={handleAppend}>Add</button>
-        </>
+            <div className={styles.addButtonWrapper}>
+                <button className={styles.addButton} type="button" onClick={handleAppend}>+</button>
+            </div>
+        </div>
     )
 }

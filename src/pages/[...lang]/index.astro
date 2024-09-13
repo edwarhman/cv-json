@@ -1,21 +1,24 @@
 ---
 import type { CV } from "@/cv";
-import Form from "@/editor/components/form";
+import Form from "@/Editor/components/Form/Form";
 import Layout from "@/layouts/Layout.astro";
-import Cv from "@/core/components/Cv";
+import Cv from "@/core/components/CV/Cv";
 import { i18n } from "@/core/i18n/config";
 import { useTranslation, type Locale } from "@/core/i18n/utils";
+import { getCollection } from "astro:content";
 
 const lang = Astro.params.lang as Locale ?? i18n.defaultLocale
 const uiContent = useTranslation(lang)
+const pages = await getCollection("cv");
+const cv = pages.find((page) => page.id === lang)
 ---
 
 <Layout title="Portafolio">
     <div class="editor-container">
-        <main class="editor no-print">
-            <Form client:load />
+        <main class="editor no-print box-shadow">
+            <Form client:load initialValues={cv?.data} />
         </main>
-        <aside class="preview">
+        <aside class="preview box-hadow">
             <Cv client:load uiContent={uiContent} />
         </aside>
     </div>
@@ -23,16 +26,29 @@ const uiContent = useTranslation(lang)
 
 <style>
     .editor-container {
+        background-color: #eee;
         display: flex;
         min-height: 100vh;
     }
 
     .editor {
-        min-width: 300px;
+        background-color: #fff;
+        min-width: 440px;
     }
 
     .preview {
         padding-left: 1rem;
         flex-grow: 1;
+    }
+
+    .box-shadow {
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen {
+        .editor-container > * {
+            overflow: scroll;
+            max-height: 100vh;
+        }
     }
 </style>

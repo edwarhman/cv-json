@@ -1,0 +1,25 @@
+.formFieldsList {}
+
+.childrenWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.children {
+    flex-grow: 1;
+    margin-left: 0.5rem;
+}
+
+.addButtonWrapper {
+    border-radius: 0.35rem;
+    border: 1px dashed #ddd;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.addButton {
+    /* margin-top: 1rem; */
+}
