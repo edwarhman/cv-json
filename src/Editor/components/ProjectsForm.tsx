@@ -30,6 +30,7 @@ export default function ({ index, control, register, onChange }: Props) {
                     name={`projects.${index}.highlights`}
                     render={({ index: fieldIndex }) => <input type="text" placeholder="Highlights" {...register(`projects.${index}.highlights.${fieldIndex}`, { required: true })} />}
                     onChange={onChange}
+                    type="internal"
                 />
             </label>
             <label>

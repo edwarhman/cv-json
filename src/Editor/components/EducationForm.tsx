@@ -1,3 +1,4 @@
+import Row from "@/core/components/Row";
 import type { UseFormRegister } from "react-hook-form";
 
 interface Props {
@@ -13,17 +14,19 @@ export default function ({ index, register }: Props) {
                 <input {...register(`education.${index}.institution`, { required: true })} />
             </label>
             <label>
-                Start Date
-                <input {...register(`education.${index}.startDate`, { required: true })} />
-            </label>
-            <label>
-                End Date
-                <input {...register(`education.${index}.endDate`, { required: true })} />
-            </label>
-            <label>
                 Area
                 <input {...register(`education.${index}.area`, { required: true })} />
             </label>
+            <Row>
+                <label>
+                    Start Date
+                    <input {...register(`education.${index}.startDate`, { required: true })} />
+                </label>
+                <label>
+                    End Date
+                    <input {...register(`education.${index}.endDate`, { required: true })} />
+                </label>
+            </Row>
         </div>
     )
 }

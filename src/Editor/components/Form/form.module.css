@@ -17,13 +17,21 @@ textarea {
 }
 
 button {
+    width: 1.7rem;
+    color: #777;
+    height: 1.7rem;
     border-radius: 0.35rem;
     padding: 0.2rem;
     border: 1px solid #ddd;
     background-color: #fdfdfd;
     line-height: 1;
-    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
 
+button:hover {
+    background: #eee;
+    border: 1px solid #ddd;
 }
 
 textarea {

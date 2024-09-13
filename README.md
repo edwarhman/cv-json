@@ -90,3 +90,23 @@ pnpm dev
 
 
 
+
+# TODO
+
+[x] Cambiar layout Location
+    [x] city - region
+    [x] postalCode - Country Code
+[x] Estilar field list
+    [x] añadir separador entre botón y campos
+    [x] personalizar boton de agregar campo
+    [x] ajustar ancho botón
+    [x] cambiar icono de eliminar campo por papelera
+    [x] cambiar layout según el tipo (external, internal)
+    [x] agregar margin inferior a footer
+    [x] quitar separador en el tipo internal
+[x] Layout de Trabajos
+    [x] start date - end date
+[x] Layout de Educacion
+    [x] start date - end date
+
+[] Corregir que se queda guardada la información inicial cuando se edita el formulario
