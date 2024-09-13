@@ -1,16 +1,20 @@
-import FormFieldsList from "@/core/components/FormFieldsList";
+import FormFieldsList from "@/core/components/FormFieldsList/FormFieldsList";
 import { updateCv } from "@/core/stores/cv.store";
 import type { CV, Education, Project, Work } from "@/cv";
 import { useEffect } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
-import WorkForm from "./WorkForm";
-import EducationForm from "./EducationForm";
-import ProjectsForm from "./ProjectsForm";
-import ProfileForm from "./ProfileForm";
+import WorkForm from "../WorkForm";
+import EducationForm from "../EducationForm";
+import ProjectsForm from "../ProjectsForm";
+import ProfileForm from "../ProfileForm";
+import styles from './form.module.css'
 
+interface Props {
+    initialValues: CV
+}
 
-export default function Form() {
-    const { register, getValues, control } = useForm<CV>();
+export default function Form({ initialValues }: Props) {
+    const { register, getValues, control } = useForm<CV>({ defaultValues: initialValues });
 
 
     function handleFormChange(event: any) {
@@ -24,8 +28,14 @@ export default function Form() {
     console.log('form: ', getValues())
 
     return (
-        <form className="form" action="#" onChange={handleFormChange} onError={(e) => console.log(e)} onSubmit={(e) => console.log(e)}>
+        <form
+            className={styles.form}
+            action="#"
+            onChange={handleFormChange}
+            onError={(e) => console.log(e)} onSubmit={(e) => console.log(e)}
+        >
             <section>
+                <h4>Contact info</h4>
                 <label>Name
                     <input {...register("basics.name", { required: true })} />
                 </label>
@@ -86,7 +96,7 @@ export default function Form() {
                 </section>
 
                 <section>
-                    <h4>Profiles</h4>
+                    <h4>Social profiles</h4>
                     <FormFieldsList
                         control={control}
                         name="basics.profiles"

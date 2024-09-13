@@ -89,7 +89,7 @@ export default function Hero({ basics, uiContent }: Props) {
                         }
                     </footer>
                 </div>
-                <figure className="no-print">
+                <figure className="">
                     <img src={image} alt={name} />
                 </figure>
             </div>
