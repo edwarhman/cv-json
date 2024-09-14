@@ -15,7 +15,15 @@ interface Props {
 }
 
 export default function Form({ initialValues }: Props) {
-    const { register, getValues, control } = useForm<CV>({ defaultValues: initialValues });
+    const { register, getValues, control, setValue } = useForm<CV>();
+
+    useEffect(() => {
+        setValue('basics', initialValues.basics)
+        setValue('work', initialValues.work)
+        setValue('education', initialValues.education)
+        setValue('projects', initialValues.projects)
+    }, [])
+
 
 
     function handleFormChange(event: any) {
@@ -26,7 +34,6 @@ export default function Form({ initialValues }: Props) {
         updateCv(getValues())
     })
 
-    console.log('form: ', getValues())
 
     return (
         <form
