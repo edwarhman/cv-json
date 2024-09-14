@@ -1,6 +1,6 @@
 .formFieldsList {}
 
-.childrenWrapper {
+.fieldWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -8,27 +8,27 @@
     gap: 0.5rem;
 }
 
-.internal .childrenWrapper {
+.internal>.fieldWrapper {
     flex-direction: row-reverse;
 }
 
-.children {
+.field {
     flex-grow: 1;
     padding-left: 0.6rem;
     border-radius: 5%;
     position: relative;
 }
 
-.internal .children {
+.internal>.fieldWrapper .field {
     padding-left: 0;
     position: initial;
 }
 
-.children>* {
+.field>* {
     width: 100%;
 }
 
-.children::before {
+.field::before {
     content: "";
     display: block;
     position: absolute;
@@ -41,6 +41,23 @@
     background: linear-gradient(0deg, rgba(221, 221, 221, 0.3043418050814075) 0%, rgba(233, 233, 233, 1) 25%, rgba(221, 221, 221, 1) 75%, rgba(221, 221, 221, 0.30154068463322825) 100%);
 }
 
+.footer {
+    margin-top: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.external>.footer .footerSpacing {
+    display: none;
+}
+
+.internal>.footer .footerSpacing {
+    visibility: hidden;
+}
+
+.footer>.field::before {
+    display: none;
+}
+
 .addButtonWrapper {
     border: 1px dashed #ddd;
     border-radius: 0.35rem;
@@ -51,19 +68,6 @@
     width: 100%;
 }
 
-.external .footer {
-    margin-top: 0.6rem;
-    margin-bottom: 1rem;
-    gap: 0
-}
-
-.internal .footerSpacing {
-    visibility: hidden;
-}
-
-.external .footerSpacing {
-    display: none;
-}
 
 .addButtonWrapper:hover {
     border: 1px dashed #dfdfdf;
