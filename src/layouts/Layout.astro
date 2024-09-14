@@ -109,8 +109,17 @@ const lang = getLangFromUrl(Astro.url)
   }
 
   label {
-    display: flex;
-    flex-direction: column;
+    display: block;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    display: block;
+  }
+
+  label>input[type="checkbox"] {
+    width: initial;
+    display: inline-block;
   }
 
   .print {
