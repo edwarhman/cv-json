@@ -1,4 +1,4 @@
-import FormFieldsList from "@/core/components/FormFieldsList/FormFieldsList";
+import FormFieldsList from "@/Editor/components/FormFieldsList/FormFieldsList";
 import type { Control, UseFormRegister } from "react-hook-form";
 
 interface Props {

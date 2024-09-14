@@ -1,4 +1,4 @@
-import FormFieldsList from "@/core/components/FormFieldsList/FormFieldsList";
+import FormFieldsList from "@/Editor/components/FormFieldsList/FormFieldsList";
 import { updateCv } from "@/core/stores/cv.store";
 import type { CV, Education, Project, Work } from "@/cv";
 import { useEffect } from "react";
