@@ -34,8 +34,8 @@ export default function ({ index, control, register, onChange }: Props) {
                 />
             </label>
             <label>
-                Is Active
-                <input {...register(`projects.${index}.isActive`, { required: true })} />
+                Is Online
+                <input {...register(`projects.${index}.isActive`, { required: true })} type="checkbox" />
             </label>
             <label>
                 Github
