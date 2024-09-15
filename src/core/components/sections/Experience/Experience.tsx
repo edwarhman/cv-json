@@ -10,7 +10,7 @@ interface Props {
 export default function Work({ works, uiContent }: Props) {
     return (
         works.length > 0 && (
-            <Section title={uiContent.sections.work}>
+            <Section title={uiContent.sections.experience}>
                 <div className={styles.experience}>
                     <ul>
                         {
