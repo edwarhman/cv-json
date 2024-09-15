@@ -90,7 +90,7 @@ export default function Hero({ basics, uiContent }: Props) {
                     </footer>
                 </div>
                 <figure className="">
-                    <img src={image} alt={name} />
+                    {image && <img src={image} alt={name} />}
                 </figure>
             </div>
         </Section>
