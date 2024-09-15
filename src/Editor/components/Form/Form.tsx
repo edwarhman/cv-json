@@ -43,7 +43,7 @@ export default function Form({ initialValues }: Props) {
             onError={(e) => console.log(e)} onSubmit={(e) => console.log(e)}
         >
             <section>
-                <h4>Contact info</h4>
+                <h3>Contact info</h3>
                 <label>Name
                     <input {...register("basics.name", { required: true })} />
                 </label>
@@ -79,7 +79,7 @@ export default function Form({ initialValues }: Props) {
                 </label>
 
                 <section>
-                    <h4>Location</h4>
+                    <h3>Location</h3>
                     <label>
                         Address
                         <input {...register("basics.location.address", { required: true })} />
@@ -107,7 +107,7 @@ export default function Form({ initialValues }: Props) {
                     </Row>
                 </section>
                 <section>
-                    <h4>Social profiles</h4>
+                    <h3>Social profiles</h3>
                     <FormFieldsList
                         control={control}
                         name="basics.profiles"
@@ -117,7 +117,7 @@ export default function Form({ initialValues }: Props) {
                 </section>
             </section>
             <section>
-                <h4>Work</h4>
+                <h3>Work</h3>
                 <FormFieldsList
                     control={control}
                     name="work"
@@ -126,7 +126,7 @@ export default function Form({ initialValues }: Props) {
                 />
             </section>
             <section>
-                <h4>Education</h4>
+                <h3>Education</h3>
                 <FormFieldsList
                     control={control}
                     name="education"
@@ -135,7 +135,7 @@ export default function Form({ initialValues }: Props) {
                 />
             </section>
             <section>
-                <h4>Projects</h4>
+                <h3>Projects</h3>
                 <FormFieldsList
                     control={control}
                     name="projects"
