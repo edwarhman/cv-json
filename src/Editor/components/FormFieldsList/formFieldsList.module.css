@@ -61,8 +61,8 @@
 }
 
 .addButtonWrapper {
-    background-color: #fdfdfd;
-    border: 1px dashed #ddd;
+    background-color: #fff;
+    border: 2px dashed #ddd;
     border-radius: 0.35rem;
     display: flex;
     height: initial;
@@ -72,10 +72,13 @@
     cursor: pointer;
 }
 
+.external>.fieldWrapper>.field>.addButtonWrapper {
+    padding: 2rem 0;
+}
 
 .addButtonWrapper:hover {
-    border: 1px dashed #dfdfdf;
-    background-color: #fafafa;
+    border: 2px dashed #ddd;
+    background-color: #fbfbfb;
 }
 
 .button {
