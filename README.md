@@ -109,4 +109,18 @@ pnpm dev
 [x] Layout de Educacion
     [x] start date - end date
 
-[] Corregir que se queda guardada la información inicial cuando se edita el formulario
+[x] Corregir que se queda guardada la información inicial cuando se edita el formulario
+[x] Cambiar layout footer de FieldsList
+[x] Cambiar input active de proyectos a checkbox
+[x] Corregir que los títulos de las secciones se muestran aunque no hay información
+[x] Corregir que se muestra la foto incluso cuando no hay una URL
+[x] Cambiar tamaño y separación de títulos de secciones en el editor
+[x] Añadir separación entre listas de trabajos, proyectos y educación
+[x] Corregir que no se muestra el titulo de la sección de experiencia
+[x] Corregir botón dentro de botón
+[x] Corregir errores clip-rule y fill-rule en svg
+[] Corregir warning not key prop passed to list item
+[] Corregir error no carga correctamente las cuentas sociales predefinidas
+[] Hacer los append field buttons más grandes cuando es tipo external
+[] Corregir que no se muestra un mensaje de error en la fecha cuando no hay ninguna
+[x] Corregir error de hidratación de react
