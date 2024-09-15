@@ -1,5 +1,3 @@
-.formFieldsList {}
-
 .fieldWrapper {
     display: flex;
     flex-direction: row;
@@ -10,6 +8,10 @@
 
 .internal>.fieldWrapper {
     flex-direction: row-reverse;
+}
+
+.external>:not(.footer).fieldWrapper {
+    margin-top: 2.5rem;
 }
 
 .field {
