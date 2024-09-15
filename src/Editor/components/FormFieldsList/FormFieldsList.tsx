@@ -35,7 +35,7 @@ export default function ({ control, name, defaultValue, render, onChange, type }
                     const children = render({ index })
                     return (
                         <div key={field.id} className={`${styles.fieldWrapper}`}>
-                            <button type="button" onClick={() => handleRemove(index)}><Trash /></button>
+                            <button className={styles.button} type="button" onClick={() => handleRemove(index)}><Trash /></button>
                             <div className={styles.field}>
                                 {children}
                             </div>
@@ -45,11 +45,11 @@ export default function ({ control, name, defaultValue, render, onChange, type }
             }
             <div className={`${styles.fieldWrapper} ${styles.footer}`}>
                 <div className={styles.footerSpacing}>
-                    <button disabled>a</button>
+                    <button className={styles.button}>a</button>
                 </div>
                 <div className={styles.field}>
                     <button type="button" className={styles.addButtonWrapper} onClick={handleAppend}>
-                        <button className={styles.addButton} type="button">+</button>
+                        <div className={styles.button}>+</div>
                     </button>
                 </div>
             </div>
