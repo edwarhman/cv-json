@@ -121,6 +121,10 @@ pnpm dev
 [x] Corregir errores clip-rule y fill-rule en svg
 [] Corregir warning not key prop passed to list item
 [] Corregir error no carga correctamente las cuentas sociales predefinidas
-[] Hacer los append field buttons más grandes cuando es tipo external
+[x] Hacer los append field buttons más grandes cuando es tipo external
 [] Corregir que no se muestra un mensaje de error en la fecha cuando no hay ninguna
 [x] Corregir error de hidratación de react
+[] Cambiar información por defecto
+[] Corregir que el primer botón de la lista de campos se hace hover cuando no debe
+[] Agregar Personal URL al CV
+[] cambiar icono de localización por un map pin

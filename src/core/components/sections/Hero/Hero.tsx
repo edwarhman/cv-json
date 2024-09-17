@@ -72,7 +72,6 @@ export default function Hero({ basics, uiContent }: Props) {
                             profiles?.map(({ network, url, username }) => {
                                 const Icon = SOCIAL_ICONS[network]
 
-                                console.log({ Icon, network })
 
                                 return (
                                     <a

@@ -19,6 +19,7 @@ export default function Cv({ cv, uiContent }: Props) {
     const [$cvItems, setItems] = useState<CV>()
 
     useEffect(() => {
+        console.log({ cvStore })
         setItems(cvStore)
     }, [cvStore])
 

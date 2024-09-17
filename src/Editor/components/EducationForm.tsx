@@ -20,11 +20,11 @@ export default function ({ index, register }: Props) {
             <Row>
                 <label>
                     Start Date
-                    <input {...register(`education.${index}.startDate`, { required: true })} />
+                    <input {...register(`education.${index}.startDate`, { required: true })} type="date" />
                 </label>
                 <label>
                     End Date
-                    <input {...register(`education.${index}.endDate`, { required: true })} />
+                    <input {...register(`education.${index}.endDate`, { required: true })} type="date" />
                 </label>
             </Row>
         </div>

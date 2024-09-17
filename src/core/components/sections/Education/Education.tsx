@@ -16,9 +16,11 @@ export default function Education({ uiContent, education }: Props) {
                     <ul>
                         {
                             education.map(({ institution, startDate, endDate, area }) => {
-                                const startYear = new Date(startDate).getFullYear()
-                                const endYear =
+                                let startYear = new Date(startDate).getFullYear()
+                                startYear = Number.isNaN(startYear) ? uiContent.missingDate : startYear
+                                let endYear =
                                     endDate != null ? new Date(endDate).getFullYear() : uiContent.current
+                                endYear = Number.isNaN(endYear) ? uiContent.missingDate : endYear
                                 const years = startDate ? `${startYear} - ${endYear}` : `${endYear}`
 
                                 return (

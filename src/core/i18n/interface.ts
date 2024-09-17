@@ -29,6 +29,7 @@ export const uiContent = {
       goBack: 'Volver'
     },
     current: 'Actualidad',
+    missingDate: 'Ingrese una fecha',
     visit: 'Visitar',
     pageTitle: (name: string, label: string) => `Portafolio de ${name} - ${label}`,
     contact: {
@@ -92,6 +93,7 @@ export const uiContent = {
       goBack: 'Go back'
     },
     current: 'Current',
+    missingDate: 'Enter a date',
     visit: 'Visit',
     pageTitle: (name: string, label: string) => `${name}'s Portfolio - ${label}`,
     contact: {

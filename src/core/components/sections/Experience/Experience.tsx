@@ -16,17 +16,17 @@ export default function Work({ works, uiContent }: Props) {
                         {
                             works.map(
                                 ({ name, startDate, endDate, position, summary, highlights, url }) => {
-                                    const startYear = new Date(startDate).getFullYear();
+                                    let startYear: number = new Date(startDate).getFullYear() ?? uiContent.missingDate;
+                                    startYear = Number.isNaN(startYear) ? uiContent.missingDate : startYear;
                                     const startMonth =
-                                        uiContent.months[Number(new Date(startDate).getMonth())];
-                                    const endYear =
+                                        uiContent.months[Number(new Date(startDate).getMonth())] ?? "";
+                                    let endYear: number =
                                         endDate != null
                                             ? new Date(endDate).getFullYear()
                                             : uiContent.current;
-                                    const endMonth =
-                                        endDate != null
-                                            ? uiContent.months[Number(new Date(endDate).getMonth())]
-                                            : "";
+                                    endYear = Number.isNaN(endYear) ? uiContent.current : endYear;
+                                    let endMonth = endDate ? uiContent.months[Number(new Date(endDate).getMonth())] : "";
+                                    endMonth = endMonth ? endMonth : '';
                                     const years = `${startMonth} ${startYear} - ${endMonth} ${endYear}`;
 
                                     return (
