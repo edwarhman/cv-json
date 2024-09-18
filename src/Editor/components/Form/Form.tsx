@@ -1,6 +1,6 @@
 import FormFieldsList from '@/Editor/components/FormFieldsList/FormFieldsList'
 import { updateCv } from '@/core/stores/cv.store'
-import type { CV, Education, Project, Work } from '@/cv'
+import type { CV, } from '@/cv'
 import { useEffect } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
 import WorkForm from '../WorkForm'
@@ -14,7 +14,7 @@ interface Props {
   initialValues: CV
 }
 
-export default function Form ({ initialValues }: Props) {
+export default function Form({ initialValues }: Props) {
   const { register, getValues, control, setValue } = useForm<CV>()
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Form ({ initialValues }: Props) {
     setValue('projects', initialValues.projects)
   }, [])
 
-  function handleFormChange (event: any) {
+  function handleFormChange(event: any) {
     updateCv(getValues())
   }
 

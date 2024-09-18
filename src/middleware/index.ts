@@ -1,4 +1,4 @@
-import { sequence } from "astro:middleware";
-import { redirectIfInvalidLang } from "./redirectToDefaultLocale";
+import { sequence } from 'astro:middleware'
+import { redirectIfInvalidLang } from './redirectToDefaultLocale'
 
-export const onRequest = sequence(redirectIfInvalidLang);
+export const onRequest = sequence(redirectIfInvalidLang)
