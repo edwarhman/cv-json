@@ -28,7 +28,6 @@ export default function Hero({ basics, uiContent }: Props) {
   const linkedInfo = profiles?.find(({ network }) => network === 'LinkedIn')
   const linkedUrl = linkedInfo?.url
   const printInfo = [email, phone, linkedUrl].filter(Boolean).join(' • ')
-  const chocolate = uiContent.locale === 'es' ? '🍫' : '🍪'
 
   return (
     <Section>
