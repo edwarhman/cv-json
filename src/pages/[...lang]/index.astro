@@ -21,7 +21,7 @@ const cv = pages.find((page) => page.id === lang)
             <Form client:load initialValues={cv?.data} />
         </main>
         <aside class="preview box-hadow">
-            <Cv id="cv-preview" client:load uiContent={uiContent} />
+            <Cv client:load uiContent={uiContent} />
         </aside>
     </div>
 </Layout>
