@@ -6,6 +6,7 @@ import Cv from "@/core/components/CV/Cv";
 import { i18n } from "@/core/i18n/config";
 import { useTranslation, type Locale } from "@/core/i18n/utils";
 import { getCollection } from "astro:content";
+import ExpandIcon from "@/core/icons/expand.astro"
 
 const lang = Astro.params.lang as Locale ?? i18n.defaultLocale
 const uiContent = useTranslation(lang)
@@ -15,40 +16,72 @@ const cv = pages.find((page) => page.id === lang)
 
 <Layout title="Portafolio">
     <div class="editor-container">
+<button class="button" id="extend-button"><ExpandIcon /></button>
         <main class="editor no-print box-shadow">
             <Form client:load initialValues={cv?.data} />
         </main>
         <aside class="preview box-hadow">
-            <Cv client:load uiContent={uiContent} />
+            <Cv id="cv-preview" client:load uiContent={uiContent} />
         </aside>
     </div>
 </Layout>
+
+<script>
+  const appendButton = document.getElementById("extend-button")
+  const cvPreview = document.querySelector(".editor-container")
+
+  appendButton.addEventListener("click", ()=>{
+    cvPreview.classList.toggle("expanded")
+  })
+</script>
 
 <style>
     .editor-container {
         background-color: #eee;
         display: flex;
         min-height: 100vh;
+        position: relative;
+    }
+
+    .editor-container > * {
+        overflow-y: scroll;
+        max-height: 100vh;
     }
 
     .editor {
         background-color: #fff;
-        max-width: 440px;
     }
 
     .preview {
-        padding-left: 1rem;
-        flex-grow: 1;
+      width: 0;
+    }
+
+    .preview {
+      padding-left: 1rem;
+    }
+
+    .expanded > .editor {
+      width: 0;
+    }
+
+    .expanded > .preview {
+      width: 100vw;
+      overflow: initial;
     }
 
     .box-shadow {
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     }
 
+    #extend-button {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      z-index: 100;
+    }
+
     @media screen {
-        .editor-container > * {
-            overflow: scroll;
-            max-height: 100vh;
-        }
+      @media (min-width: 500px) {
+      }
     }
 </style>
