@@ -11,21 +11,29 @@ import styles from './form.module.css'
 import Row from '@/core/components/Row'
 
 interface Props {
-  initialValues: CV
+  defaultValues: CV
 }
 
-export default function Form({ initialValues }: Props) {
+export default function Form({ defaultValues }: Props) {
   const { register, getValues, control, setValue } = useForm<CV>()
 
   useEffect(() => {
+
+    const localStorageString = localStorage.getItem("cv")
+    const initialValues = localStorageString ? JSON.parse(localStorageString) : defaultValues
     setValue('basics', initialValues.basics)
     setValue('work', initialValues.work)
     setValue('education', initialValues.education)
     setValue('projects', initialValues.projects)
   }, [])
 
+  function updateLocalStorage(data: CV) {
+    localStorage.setItem("cv", JSON.stringify(data))
+  }
+
   function handleFormChange(event: any) {
     updateCv(getValues())
+    updateLocalStorage(getValues())
   }
 
   useEffect(() => {

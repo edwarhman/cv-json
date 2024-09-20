@@ -116,8 +116,10 @@ pnpm dev
 [x] Corregir error de hidratación de react
 [] Cambiar información por defecto
 [] Corregir que el primer botón de la lista de campos se hace hover cuando no debe
-[] Agregar Personal URL al CV
+[x] Agregar Personal URL al CV
 [x] cambiar icono de localización por un map pin
 [] Agregar opciones para imprimir, exportar y guardar en formato json
-[] Guardar cambios en local storage
+[x] Guardar cambios en local storage
+[] agregar navbar para poder navegar por las secciones del editor 
+[] hacer que que el preview ocupe maximo el 100% del ancho de pantalla
 

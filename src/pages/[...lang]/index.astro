@@ -21,7 +21,7 @@ const cv = pages.find((page) => page.id === lang)
     <div class="editor-container">
       <button class="button no-print" id="extend-button"><ExpandIcon /></button>
         <main class="editor no-print box-shadow">
-            <Form client:load initialValues={cv?.data} />
+            <Form client:load defaultValues={cv?.data} />
         </main>
         <aside class="preview box-hadow">
             <Cv client:load uiContent={uiContent} />
