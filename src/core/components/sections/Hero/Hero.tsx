@@ -6,6 +6,7 @@ import GitHub from '@/core/icons/GitHub'
 import LinkedIn from '@/core/icons/LinkedIn'
 import X from '@/core/icons/X'
 import WorldMap from '@/core/icons/WorldMap'
+import MapPin from '@/core/icons/MapPin'
 import Mail from '@/core/icons/Mail'
 import Phone from '@/core/icons/Phone'
 import { uiContent as uiUtils } from '@/core/i18n/interface'
@@ -36,7 +37,7 @@ export default function Hero({ basics, uiContent }: Props) {
           <h1>{name}</h1>
           <h2>{label}</h2>
           <span>
-            <WorldMap />
+            <MapPin />
             {city}, {region}
           </span>
           <footer className='print'>
