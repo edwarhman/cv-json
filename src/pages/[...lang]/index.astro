@@ -16,7 +16,7 @@ const cv = pages.find((page) => page.id === lang)
 
 <Layout title="Portafolio">
     <div class="editor-container">
-<button class="button" id="extend-button"><ExpandIcon /></button>
+      <button class="button" id="extend-button"><ExpandIcon /></button>
         <main class="editor no-print box-shadow">
             <Form client:load initialValues={cv?.data} />
         </main>
@@ -30,8 +30,8 @@ const cv = pages.find((page) => page.id === lang)
   const appendButton = document.getElementById("extend-button")
   const cvPreview = document.querySelector(".editor-container")
 
-  appendButton.addEventListener("click", ()=>{
-    cvPreview.classList.toggle("expanded")
+  appendButton?.addEventListener("click", ()=>{
+    cvPreview?.classList.toggle("expanded")
   })
 </script>
 
@@ -49,14 +49,14 @@ const cv = pages.find((page) => page.id === lang)
     }
 
     .editor {
+        width: 100vw;
+        transition: width 0.20s ease-in-out;
         background-color: #fff;
     }
 
     .preview {
-      width: 0;
-    }
-
-    .preview {
+      display: none;
+      margin: auto;
       padding-left: 1rem;
     }
 
@@ -65,8 +65,8 @@ const cv = pages.find((page) => page.id === lang)
     }
 
     .expanded > .preview {
-      width: 100vw;
-      overflow: initial;
+      display: initial;
+      overflow: auto;
     }
 
     .box-shadow {
@@ -74,7 +74,7 @@ const cv = pages.find((page) => page.id === lang)
     }
 
     #extend-button {
-      position: absolute;
+      position: fixed;
       right: 1rem;
       top: 1rem;
       z-index: 100;
@@ -82,6 +82,17 @@ const cv = pages.find((page) => page.id === lang)
 
     @media screen {
       @media (min-width: 500px) {
+        .editor {
+          width: initial;
+        }
+
+        .preview {
+          display: initial;
+        }
+        
+        #extend-button {
+          display: none;
+        }
       }
     }
 </style>

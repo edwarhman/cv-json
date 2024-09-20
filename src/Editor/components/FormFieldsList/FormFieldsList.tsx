@@ -24,32 +24,32 @@ export default function ({ control, name, defaultValue, render, onChange, type }
     onChange?.()
   }
 
-  function handleRemove (index: number) {
+  function handleRemove(index: number) {
     remove(index)
     onChange?.()
   }
   return (
     <div className={`${styles.formFieldsList} ${typeStyle}`}>
       {
-                fields.map((field, index) => {
-                  const children = render({ index })
-                  return (
-                    <div key={field.id} className={`${styles.fieldWrapper}`}>
-                      <button className={styles.button} type='button' onClick={() => handleRemove(index)}><Trash /></button>
-                      <div className={styles.field}>
-                        {children}
-                      </div>
-                    </div>
-                  )
-                })
-            }
+        fields.map((field, index) => {
+          const children = render({ index })
+          return (
+            <div key={field.id} className={`${styles.fieldWrapper}`}>
+              <button className='button' type='button' onClick={() => handleRemove(index)}><Trash /></button>
+              <div className={styles.field}>
+                {children}
+              </div>
+            </div>
+          )
+        })
+      }
       <div className={`${styles.fieldWrapper} ${styles.footer}`}>
         <div className={styles.footerSpacing}>
-          <button className={styles.button}>a</button>
+          <button className='button'>a</button>
         </div>
         <div className={styles.field}>
           <button type='button' className={styles.addButtonWrapper} onClick={handleAppend}>
-            <div className={styles.button}>+</div>
+            <div className='button'>+</div>
           </button>
         </div>
       </div>
