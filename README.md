@@ -122,4 +122,5 @@ pnpm dev
 [x] Guardar cambios en local storage
 [] agregar navbar para poder navegar por las secciones del editor 
 [] hacer que que el preview ocupe maximo el 100% del ancho de pantalla
+[] corregir error no se muestra el preview cuando se modifican las redes (no se llenan completamente)
 

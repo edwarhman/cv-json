@@ -20,18 +20,16 @@ const cv = pages.find((page) => page.id === lang)
 <Layout title="Portafolio">
     <div class="editor-container">
       <button class="button no-print" id="extend-button"><ExpandIcon /></button>
+             <ul class="preview-controls">
+                <li><button id="print-button" class="button"><Print /></button></li>
+                <li><button id="export-button" class="button"><FileExport /></button></li>
+                <li><button id="import-button" class="button"><FileImport /></button></li>
+            </ul>
         <main class="editor no-print box-shadow">
             <Form client:load defaultValues={cv?.data} />
         </main>
         <aside class="preview box-hadow">
             <Cv client:load uiContent={uiContent} />
-            <!-- <div class="preview-controls">
-              <ul>
-                <li><button id="print-button" class="button"><Print /></button></li>
-                <li><button id="export-button" class="button"><FileExport /></button></li>
-                <li><button id="import-button" class="button"><FileImport /></button></li>
-              </ul>
-            </div> -->
         </aside>
     </div>
 </Layout>
@@ -105,6 +103,17 @@ const cv = pages.find((page) => page.id === lang)
       .preview {
         display: none;
       }
+
+        .preview-controls {
+          display: flex;
+          position: fixed;
+          justify-content: space-between;
+          gap: 0.5rem;
+          top: 1rem;
+          right: 50px;
+          z-index: 1000;
+      }
+
       @media (min-width: 500px) {
         .editor {
           width: initial;
@@ -113,19 +122,19 @@ const cv = pages.find((page) => page.id === lang)
         .preview {
           display: initial;
         }
+
+        .preview-controls {
+          flex-direction: column;
+          top: 50%;
+          margin-top: 0;
+          transform: translateY(-50%);
+          right: 50px;
+      }
         
         #extend-button {
           display: none;
         }
         
-        .preview-controls {
-          display: inline-block;
-          position: fixed;
-          top: 50%;
-          transform: translateY(-50%);
-          right: 50px;
-          font-size: 2rem;
-      }
     }
   }
 </style>
