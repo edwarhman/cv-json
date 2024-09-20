@@ -24,7 +24,7 @@ const SOCIAL_ICONS: SocialIcon = {
 }
 
 export default function Hero({ basics, uiContent }: Props) {
-  const { name, label, image, location, profiles, phone, email } = basics
+  const { name, label, image, location, profiles, phone, email, url } = basics
   const { city, region } = location
   const linkedInfo = profiles?.find(({ network }) => network === 'LinkedIn')
   const linkedUrl = linkedInfo?.url
@@ -40,10 +40,29 @@ export default function Hero({ basics, uiContent }: Props) {
             <MapPin />
             {city}, {region}
           </span>
+          <span className='print'>
+            <WorldMap />
+            {url}
+          </span>
           <footer className='print'>
-            {printInfo}
+            <div>
+              {printInfo}
+            </div>
+
           </footer>
           <footer className='no-print'>
+            {
+              url && (
+                <a
+                  href={`${url}`}
+                  title={uiUtils[uiContent.locale as Locale].contact.email(name, email)}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <WorldMap />
+                </a>
+              )
+            }
             {
               email && (
                 <a
