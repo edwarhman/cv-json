@@ -1,7 +1,7 @@
 import FormFieldsList from '@/Editor/components/FormFieldsList/FormFieldsList'
 import { updateCv } from '@/core/stores/cv.store'
 import type { CV, } from '@/cv'
-import { useEffect } from 'react'
+import { useEffect, useState, type ChangeEvent } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
 import WorkForm from '../WorkForm'
 import EducationForm from '../EducationForm'
@@ -9,6 +9,7 @@ import ProjectsForm from '../ProjectsForm'
 import ProfileForm from '../ProfileForm'
 import styles from './form.module.css'
 import Row from '@/core/components/Row'
+import BigButton from '../BigButton/BigButton'
 
 interface Props {
   defaultValues: CV
@@ -16,6 +17,7 @@ interface Props {
 
 export default function Form({ defaultValues }: Props) {
   const { register, getValues, control, setValue } = useForm<CV>()
+  const [image, setImage] = useState('')
 
   useEffect(() => {
 
@@ -40,6 +42,15 @@ export default function Form({ defaultValues }: Props) {
     updateCv(getValues())
   })
 
+  function handleImageChange(e: ChangeEvent<HTMLInputElement>): void {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    setImage(URL.createObjectURL(file))
+
+    console.log({ file })
+  }
+
   return (
     <form
       className={styles.form}
@@ -55,7 +66,21 @@ export default function Form({ defaultValues }: Props) {
 
         <label>
           Image
-          <input {...register('basics.image', { required: true })} />
+          <div className={styles.profileImageWrapper}>
+            <BigButton>
+              upload image
+            </BigButton>
+            {
+              image
+              && <img src={image} alt='profile-image' className={styles.profileImage} />
+            }
+            <input
+              {...register('basics.image', { required: true })}
+              type='file'
+              accept='image/*'
+              onChange={(e) => handleImageChange(e)}
+            />
+          </div>
         </label>
 
         <label>

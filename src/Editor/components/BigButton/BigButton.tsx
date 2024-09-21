@@ -3,7 +3,7 @@ import styles from './bigButton.module.css'
 interface Props {
     children: React.ReactNode
     type?: 'internal' | 'external'
-    onClick: () => void
+    onClick?: () => void
 }
 
 export default function BigButton({
