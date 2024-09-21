@@ -59,24 +59,3 @@
 .footer>.field::before {
     display: none;
 }
-
-.addButtonWrapper {
-    background-color: #fff;
-    border: 2px dashed #ddd;
-    border-radius: 0.35rem;
-    display: flex;
-    height: initial;
-    justify-content: center;
-    padding: 0.6rem 0;
-    width: 100%;
-    cursor: pointer;
-}
-
-.external>.fieldWrapper>.field>.addButtonWrapper {
-    padding: 2rem 0;
-}
-
-.addButtonWrapper:hover {
-    border: 2px dashed #ddd;
-    background-color: #fbfbfb;
-}
