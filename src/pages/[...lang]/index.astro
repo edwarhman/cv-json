@@ -20,17 +20,17 @@ const cv = pages.find((page) => page.id === lang)
 <Layout title="Portafolio">
     <div class="editor-container">
       <button class="button no-print" id="extend-button"><ExpandIcon /></button>
-             <ul class="preview-controls">
-                <li><button id="print-button" class="button"><Print /></button></li>
-                <li><button id="export-button" class="button"><FileExport /></button></li>
-                <li><button id="import-button" class="button"><FileImport /></button></li>
-            </ul>
-        <main class="editor no-print box-shadow">
-            <Form client:load defaultValues={cv?.data} />
-        </main>
-        <aside class="preview box-hadow">
-            <Cv client:load uiContent={uiContent} />
-        </aside>
+      <ul class="preview-controls no-print">
+        <li><button id="print-button" class="button"><Print /></button></li>
+        <li><button id="export-button" class="button"><FileExport /></button></li>
+        <li><button id="import-button" class="button"><FileImport /></button></li>
+      </ul>
+      <main class="editor no-print box-shadow">
+          <Form client:load defaultValues={cv?.data} />
+      </main>
+      <aside class="preview box-hadow">
+          <Cv client:load uiContent={uiContent} />
+      </aside>
     </div>
 </Layout>
 
