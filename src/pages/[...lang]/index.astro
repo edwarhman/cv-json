@@ -37,10 +37,26 @@ const cv = pages.find((page) => page.id === lang)
 <script>
   const appendButton = document.getElementById("extend-button")
   const cvPreview = document.querySelector(".editor-container")
+  const printButton = document.getElementById("print-button")
+  const importButton = document.getElementById("import-button")
+  const exportButton = document.getElementById("export-button")
 
   appendButton?.addEventListener("click", ()=>{
     cvPreview?.classList.toggle("expanded")
   })
+
+  printButton?.addEventListener("click", () => {
+    print()
+  })
+
+  exportButton?.addEventListener("click", ()=>{
+
+  })
+
+  importButton?.addEventListener("click", ()=>{
+
+  })
+
 </script>
 
 <style>
@@ -89,6 +105,11 @@ const cv = pages.find((page) => page.id === lang)
 
     .preview-controls {
       display: none;
+    }
+
+    .expanded > #extend-button
+    {
+      transform: scale(-1, 1);
     }
 
     @media print {
