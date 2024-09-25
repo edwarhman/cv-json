@@ -5,14 +5,10 @@
     display: flex;
     height: initial;
     justify-content: center;
-    padding: 0.6rem 0;
     width: 100%;
     cursor: pointer;
 }
 
-.external.bigButton {
-    padding: 2rem 0;
-}
 
 .bigButton:hover {
     border: 2px dashed #ddd;
