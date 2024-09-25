@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { useFieldArray, type Control } from 'react-hook-form'
 import styles from './formFieldsList.module.css'
 import Trash from '@/core/icons/Trash'
-import BigButton from '../BigButton/BigButton'
+import DottedButton from '../DottedButton/DottedButton'
 
 interface Props {
   control: Control<any>
@@ -49,9 +49,9 @@ export default function ({ control, name, defaultValue, render, onChange, type =
           <button className='button'>a</button>
         </div>
         <div className={styles.field}>
-          <BigButton type={type} onClick={handleAppend}>
-            <div className='button'>+</div>
-          </BigButton>
+          <DottedButton size={type} onClick={handleAppend} type='button'>
+            +
+          </DottedButton>
         </div>
       </div>
     </div>

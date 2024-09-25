@@ -9,7 +9,8 @@ import ProjectsForm from '../ProjectsForm'
 import ProfileForm from '../ProfileForm'
 import styles from './form.module.css'
 import Row from '@/core/components/Row'
-import BigButton from '../BigButton/BigButton'
+import DottedBox from '../BigButton/BigButton'
+import UploadImage from '../UploadImage/UploadImage'
 
 interface Props {
   defaultValues: CV
@@ -17,7 +18,6 @@ interface Props {
 
 export default function Form({ defaultValues }: Props) {
   const { register, getValues, control, setValue } = useForm<CV>()
-  const [image, setImage] = useState('')
 
   useEffect(() => {
 
@@ -33,54 +33,51 @@ export default function Form({ defaultValues }: Props) {
     localStorage.setItem("cv", JSON.stringify(data))
   }
 
-  function handleFormChange(event: any) {
+  function handleFormChange(event?: any) {
+    event?.preventDefault()
     updateCv(getValues())
     updateLocalStorage(getValues())
+  }
+
+  async function handleImageChange(e: ChangeEvent<HTMLInputElement>): Promise<void> {
+    const file = e.target.files?.[0]
+    const formData = new FormData()
+
+    if (!file) return
+    formData.append('file', file)
+    const res = await fetch('/api/upload-image', {
+      method: 'POST',
+      body: formData
+    })
+    const data = await res.json()
+    setValue('basics.image', data.publicURL)
+    handleFormChange()
   }
 
   useEffect(() => {
     updateCv(getValues())
   })
 
-  function handleImageChange(e: ChangeEvent<HTMLInputElement>): void {
-    const file = e.target.files?.[0]
-    if (!file) return
-
-    setImage(URL.createObjectURL(file))
-
-    console.log({ file })
-  }
 
   return (
     <form
       className={styles.form}
       action='#'
+      onSubmit={handleFormChange}
       onChange={handleFormChange}
-      onError={(e) => console.log(e)} onSubmit={(e) => console.log(e)}
+      onError={(e) => console.log(e)}
     >
       <section>
         <h3>Contact info</h3>
         <label>Name
           <input {...register('basics.name', { required: true })} />
         </label>
-
         <label>
           Image
-          <div className={styles.profileImageWrapper}>
-            <BigButton>
-              upload image
-            </BigButton>
-            {
-              image
-              && <img src={image} alt='profile-image' className={styles.profileImage} />
-            }
-            <input
-              {...register('basics.image', { required: true })}
-              type='file'
-              accept='image/*'
-              onChange={(e) => handleImageChange(e)}
-            />
-          </div>
+          <UploadImage
+            {...register('basics.image', { required: true })}
+            onChange={handleImageChange}
+          />
         </label>
 
         <label>
