@@ -1,0 +1,16 @@
+.profileImageWrapper {
+    display: flex;
+    min-height: 7rem;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    width: 100%;
+    background-color: transparent;
+
+}
+
+.profileImage {
+    width: auto;
+    height: 6rem;
+    margin: 0.5rem 0;
+}
