@@ -36,12 +36,3 @@ textarea {
 label {
     margin-bottom: 1.1rem;
 }
-
-.profileImageWrapper {
-    display: flex;
-}
-
-.profileImage {
-    width: 5rem;
-    height: auto;
-}
