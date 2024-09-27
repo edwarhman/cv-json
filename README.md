@@ -109,18 +109,24 @@ pnpm dev
 [x] Corregir que no se muestra el titulo de la sección de experiencia
 [x] Corregir botón dentro de botón
 [x] Corregir errores clip-rule y fill-rule en svg
-[] Corregir warning not key prop passed to list item
-[] Corregir error no carga correctamente las cuentas sociales predefinidas
 [x] Hacer los append field buttons más grandes cuando es tipo external
-[] Corregir que no se muestra un mensaje de error en la fecha cuando no hay ninguna
 [x] Corregir error de hidratación de react
-[] Cambiar información por defecto
-[] Corregir que el primer botón de la lista de campos se hace hover cuando no debe
 [x] Agregar Personal URL al CV
 [x] cambiar icono de localización por un map pin
-[] Agregar opciones para imprimir, exportar y guardar en formato json
 [x] Guardar cambios en local storage
-[] agregar navbar para poder navegar por las secciones del editor 
-[] hacer que que el preview ocupe maximo el 100% del ancho de pantalla
 [x] corregir error no se muestra el preview cuando se modifican las redes (no se llenan completamente)
+[] Corregir warning not key prop passed to list item
+[] Corregir error no carga correctamente las cuentas sociales predefinidas
+[] Corregir que no se muestra un mensaje de error en la fecha cuando no hay ninguna
+[] Cambiar información por defecto
+[] Corregir que el primer botón de la lista de campos se hace hover cuando no debe
+[] Agregar opciones para imprimir, exportar y guardar en formato json
+[] agregar navbar para poder navegar por las secciones del editor 
+[x] hacer que que el preview ocupe maximo el 100% del ancho de pantalla
+[] feat/upload-image
+    [x] cambiar text input por input file
+    [x] agregar astro endpoint para manejar la subida de imagenes
+    [] comprimir imagen
+    [x] subir imagen a cloud storage
+    [x] leer imagen de la nube
 

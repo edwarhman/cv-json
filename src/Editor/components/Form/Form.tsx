@@ -11,6 +11,7 @@ import styles from './form.module.css'
 import Row from '@/core/components/Row'
 import DottedBox from '../BigButton/BigButton'
 import UploadImage from '../UploadImage/UploadImage'
+import Compressor from 'compressorjs'
 
 interface Props {
   defaultValues: CV
@@ -41,17 +42,29 @@ export default function Form({ defaultValues }: Props) {
 
   async function handleImageChange(e: ChangeEvent<HTMLInputElement>): Promise<void> {
     const file = e.target.files?.[0]
-    const formData = new FormData()
 
     if (!file) return
-    formData.append('file', file)
-    const res = await fetch('/api/upload-image', {
-      method: 'POST',
-      body: formData
-    })
-    const data = await res.json()
-    setValue('basics.image', data.publicURL)
-    handleFormChange()
+
+    new Compressor(file, {
+      quality: 0.8,
+      maxWidth: 300,
+      mimeType: "image/webp",
+      async success(result) {
+        const formData = new FormData()
+        formData.append('file', result)
+        const res = await fetch('/api/upload-image', {
+          method: 'POST',
+          body: formData
+        })
+        const data = await res.json()
+        setValue('basics.image', data.publicURL)
+        handleFormChange()
+
+      },
+      error(err) {
+        console.log({ err });
+      },
+    });
   }
 
   useEffect(() => {
