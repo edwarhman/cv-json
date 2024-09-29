@@ -1,0 +1,16 @@
+.bigButton {
+    background-color: #fff;
+    border: 2px dashed #ddd;
+    border-radius: 0.35rem;
+    display: flex;
+    height: initial;
+    justify-content: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+.bigButton:hover {
+    border: 2px dashed #ddd;
+    background-color: #fbfbfb;
+}

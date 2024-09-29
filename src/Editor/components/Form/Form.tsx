@@ -1,7 +1,7 @@
 import FormFieldsList from '@/Editor/components/FormFieldsList/FormFieldsList'
 import { updateCv } from '@/core/stores/cv.store'
 import type { CV, } from '@/cv'
-import { useEffect } from 'react'
+import { useEffect, useState, type ChangeEvent } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
 import WorkForm from '../WorkForm'
 import EducationForm from '../EducationForm'
@@ -9,6 +9,9 @@ import ProjectsForm from '../ProjectsForm'
 import ProfileForm from '../ProfileForm'
 import styles from './form.module.css'
 import Row from '@/core/components/Row'
+import DottedBox from '../BigButton/BigButton'
+import UploadImage from '../UploadImage/UploadImage'
+import Compressor from 'compressorjs'
 
 interface Props {
   defaultValues: CV
@@ -31,31 +34,63 @@ export default function Form({ defaultValues }: Props) {
     localStorage.setItem("cv", JSON.stringify(data))
   }
 
-  function handleFormChange(event: any) {
+  function handleFormChange(event?: any) {
+    event?.preventDefault()
     updateCv(getValues())
     updateLocalStorage(getValues())
+  }
+
+  async function handleImageChange(e: ChangeEvent<HTMLInputElement>): Promise<void> {
+    const file = e.target.files?.[0]
+
+    if (!file) return
+
+    new Compressor(file, {
+      quality: 0.8,
+      maxWidth: 300,
+      mimeType: "image/webp",
+      async success(result) {
+        const formData = new FormData()
+        formData.append('file', result)
+        const res = await fetch('/api/upload-image', {
+          method: 'POST',
+          body: formData
+        })
+        const data = await res.json()
+        setValue('basics.image', data.publicURL)
+        handleFormChange()
+
+      },
+      error(err) {
+        console.log({ err });
+      },
+    });
   }
 
   useEffect(() => {
     updateCv(getValues())
   })
 
+
   return (
     <form
       className={styles.form}
       action='#'
+      onSubmit={handleFormChange}
       onChange={handleFormChange}
-      onError={(e) => console.log(e)} onSubmit={(e) => console.log(e)}
+      onError={(e) => console.log(e)}
     >
       <section>
         <h3>Contact info</h3>
         <label>Name
           <input {...register('basics.name', { required: true })} />
         </label>
-
         <label>
           Image
-          <input {...register('basics.image', { required: true })} />
+          <UploadImage
+            {...register('basics.image', { required: true })}
+            onChange={handleImageChange}
+          />
         </label>
 
         <label>

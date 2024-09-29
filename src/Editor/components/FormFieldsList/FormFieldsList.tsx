@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { useFieldArray, type Control } from 'react-hook-form'
 import styles from './formFieldsList.module.css'
 import Trash from '@/core/icons/Trash'
+import DottedButton from '../DottedButton/DottedButton'
 
 interface Props {
   control: Control<any>
@@ -12,7 +13,7 @@ interface Props {
   type?: 'external' | 'internal'
 }
 
-export default function ({ control, name, defaultValue, render, onChange, type }: Props) {
+export default function ({ control, name, defaultValue, render, onChange, type = 'external' }: Props) {
   const { fields, append, remove } = useFieldArray({
     control,
     name
@@ -48,9 +49,9 @@ export default function ({ control, name, defaultValue, render, onChange, type }
           <button className='button'>a</button>
         </div>
         <div className={styles.field}>
-          <button type='button' className={styles.addButtonWrapper} onClick={handleAppend}>
-            <div className='button'>+</div>
-          </button>
+          <DottedButton size={type} onClick={handleAppend} type='button'>
+            +
+          </DottedButton>
         </div>
       </div>
     </div>
