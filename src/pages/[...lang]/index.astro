@@ -7,9 +7,11 @@ import { i18n } from "@/core/i18n/config";
 import { useTranslation, type Locale } from "@/core/i18n/utils";
 import { getCollection } from "astro:content";
 import ExpandIcon from "@/core/icons/expand.astro"
-import FileExport from "@/core/icons/file-export.astro";
 import FileImport from "@/core/icons/file-import.astro";
+import FileExport from "@/core/icons/file-export.astro";
 import Print from "@/core/icons/print.astro";
+import Eye from "@/core/icons/eye.astro";
+import Edit from "@/core/icons/edit.astro";
 
 const lang = Astro.params.lang as Locale ?? i18n.defaultLocale
 const uiContent = useTranslation(lang)
@@ -19,11 +21,12 @@ const cv = pages.find((page) => page.id === lang)
 
 <Layout title="Portafolio">
     <div class="editor-container">
-      <button class="button no-print" id="extend-button"><ExpandIcon /></button>
+      <button title={uiContent.button.preview} aria-label={uiContent.button.preview} class="button no-print" id="extend-button"><Eye /></button>
+      <button title={uiContent.button.preview} aria-label={uiContent.button.preview} class="button hide no-print" id="edit-button"><Edit /></button>
       <ul class="preview-controls no-print">
-        <li><button id="print-button" class="button"><Print /></button></li>
-        <li><button id="export-button" class="button"><FileExport /></button></li>
-        <li><button id="import-button" class="button"><FileImport /></button></li>
+        <li><button title={uiContent.button.print} aria-label={uiContent.button.print} id="print-button" class="button"><Print /></button></li>
+        <li><button title={uiContent.button.export} aria-label={uiContent.button.export} id="export-button" class="button"><FileExport /></button></li>
+        <li><button title={uiContent.button.import} aria-label={uiContent.button.import} id="import-button" class="button"><FileImport /></button></li>
       </ul>
       <main class="editor no-print box-shadow">
           <Form client:load defaultValues={cv?.data} />
@@ -36,6 +39,7 @@ const cv = pages.find((page) => page.id === lang)
 
 <script>
   const appendButton = document.getElementById("extend-button")
+  const editButton = document.getElementById("edit-button")
   const cvPreview = document.querySelector(".editor-container")
   const printButton = document.getElementById("print-button")
   const importButton = document.getElementById("import-button")
@@ -43,6 +47,12 @@ const cv = pages.find((page) => page.id === lang)
 
   appendButton?.addEventListener("click", ()=>{
     cvPreview?.classList.toggle("expanded")
+    editButton?.classList.toggle("hide")
+  })
+
+  editButton?.addEventListener("click", ()=>{
+    cvPreview?.classList.toggle("expanded")
+    editButton?.classList.toggle("hide")
   })
 
   printButton?.addEventListener("click", () => {
@@ -96,7 +106,7 @@ const cv = pages.find((page) => page.id === lang)
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     }
 
-    #extend-button {
+    #extend-button, #edit-button {
       position: fixed;
       right: 1rem;
       top: 1rem;
@@ -110,6 +120,10 @@ const cv = pages.find((page) => page.id === lang)
     .expanded > #extend-button
     {
       transform: scale(-1, 1);
+    }
+
+    .hide {
+      display: none;
     }
 
     @media print {

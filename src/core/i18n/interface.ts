@@ -37,6 +37,13 @@ export const uiContent = {
       phone: (name: string, phone: string) => `Llamar por teléfono ${name} al número ${phone}`,
       socialMedia: (name: string, socialMedia: string) => `Visita el perfil de ${name} en ${socialMedia}`
     },
+    button: {
+      print: 'Imprimir',
+      export: 'Exportar',
+      import: 'Importar',
+      preview: 'Vista previa',
+      edit: 'Editar',
+    },
     keyboardManager: {
       footer: (container: HTMLElement) => {
         const cmdKbr = document.createElement('kbd')
@@ -74,7 +81,7 @@ export const uiContent = {
       'Octubre', // October
       'Noviembre', // November
       'Diciembre' // December
-    ]
+    ],
   },
   en: {
     locale: 'en',
@@ -100,6 +107,13 @@ export const uiContent = {
       email: (name: string, email: string) => `Send an email to ${name}`,
       phone: (name: string, phone: string) => `Call ${name} to the phone ${phone}`,
       socialMedia: (name: string, socialMedia: string) => `Visit ${name}'s profile on ${socialMedia}`
+    },
+    button: {
+      print: 'Print',
+      export: 'Export',
+      import: 'Import',
+      preview: 'Preview',
+      edit: 'Edit',
     },
     keyboardManager: {
       footer: (container: HTMLElement) => {

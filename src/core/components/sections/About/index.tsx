@@ -6,8 +6,13 @@ interface Props {
   basics: Basics
 }
 
-export default function About ({ title, basics }: Props) {
+export default function About({ title, basics }: Props) {
   const { summary } = basics
+
+  if (!summary || summary.length === 0) {
+    return null
+  }
+
   return (
     <Section title={title}>
       <p>
