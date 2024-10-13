@@ -1,16 +1,17 @@
 import styles from './bigButton.module.css'
 
 interface Props {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
 export default function DottedBox({
-    children,
+  children,
 }: Props) {
 
-    return (
-        <div className={`${styles.bigButton}`}>
-            {children}
-        </div>
-    )
+  return (
+    <div className={`${styles.bigButton}`}>
+      {children}
+    </div>
+  )
 }
+

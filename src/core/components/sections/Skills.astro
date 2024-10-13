@@ -48,6 +48,7 @@ const { title, skills } = Astro.props
       skills.map(({ name }) => {
         const iconName = name === "Next.js" ? "Next" : name
         const Icon = SKILLS_ICONS[iconName]
+        return <Icon />
       })
     }
   </ul>
