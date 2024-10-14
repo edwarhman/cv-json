@@ -14,7 +14,7 @@ import UploadImage from '../UploadImage/UploadImage'
 import Compressor from 'compressorjs'
 
 interface Props {
-  defaultValues: CV
+  defaultValues?: CV
 }
 
 export default function Form({ defaultValues }: Props) {
@@ -24,10 +24,10 @@ export default function Form({ defaultValues }: Props) {
 
     const localStorageString = localStorage.getItem("cv")
     const initialValues = localStorageString ? JSON.parse(localStorageString) : defaultValues
-    setValue('basics', initialValues.basics)
-    setValue('work', initialValues.work)
-    setValue('education', initialValues.education)
-    setValue('projects', initialValues.projects)
+    setValue('basics', initialValues?.basics)
+    setValue('work', initialValues?.work)
+    setValue('education', initialValues?.education)
+    setValue('projects', initialValues?.projects)
   }, [])
 
   function updateLocalStorage(data: CV) {

@@ -44,6 +44,10 @@ export const uiContent = {
       preview: 'Vista previa',
       edit: 'Editar',
     },
+    preview: {
+      emptyMessage: 'Añade información para empezar a ver tu CV.',
+      emptyMessageMobile: 'Luego pulsa el botón preview para ver los cambios.'
+    },
     keyboardManager: {
       footer: (container: HTMLElement) => {
         const cmdKbr = document.createElement('kbd')
@@ -114,6 +118,10 @@ export const uiContent = {
       import: 'Import',
       preview: 'Preview',
       edit: 'Edit',
+    },
+    preview: {
+      emptyMessage: 'Add information to start viewing your CV.',
+      emptyMessageMobile: 'Then press the preview button to view changes.'
     },
     keyboardManager: {
       footer: (container: HTMLElement) => {

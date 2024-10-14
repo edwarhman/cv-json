@@ -5,6 +5,15 @@
     padding: 3rem;
 }
 
+.empty {
+    text-align: center;
+}
+
+.empty p {
+    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+}
+
 @media print {
     .cvContainer {
         padding: 0

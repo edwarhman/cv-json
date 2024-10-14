@@ -17,11 +17,29 @@ interface Props {
 export default function Cv({ cv, uiContent }: Props) {
   const cvStore = cv ?? useStore(cvItems)
   const [$cvItems, setItems] = useState<CV>()
+  console.log({ $cvItems })
+
+  function checkEmpty(obj: any) {
+    const values = Object.values(obj)
+    console.log({ values })
+    return values.every(value => value == null)
+  }
 
   useEffect(() => {
     console.log({ cvStore })
     setItems(cvStore)
   }, [cvStore])
+
+  if (!$cvItems) {
+    return <div>Loading...</div>
+  }
+
+  if (checkEmpty($cvItems)) {
+    return <div className={styles.empty}>
+      <p>{uiContent.preview.emptyMessage}</p>
+      <p className='mobile'>{uiContent.preview.emptyMessageMobile}</p>
+    </div>
+  }
 
   return (
     <div className={styles.cvContainer}>

@@ -25,10 +25,11 @@ const SOCIAL_ICONS: SocialIcon = {
 
 export default function Hero({ basics, uiContent }: Props) {
   const { name, label, image, location, profiles, phone, email, url } = basics
-  const { city, region } = location
   const linkedInfo = profiles?.find(({ network }) => network === 'LinkedIn')
   const linkedUrl = linkedInfo?.url
   const printInfo = [email, phone, linkedUrl].filter(Boolean).join(' • ')
+
+  console.log({ basics })
 
   return (
     <Section>
@@ -38,7 +39,7 @@ export default function Hero({ basics, uiContent }: Props) {
           <h2>{label}</h2>
           <span>
             <MapPin />
-            {city}, {region}
+            {location?.city}, {location?.region}
           </span>
           <span className='print'>
             <WorldMap />
