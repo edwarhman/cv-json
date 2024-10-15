@@ -81,7 +81,7 @@ export default function Form({ defaultValues }: Props) {
       onError={(e) => console.log(e)}
     >
       <section>
-        <h3>Contact info</h3>
+        <h3>Personal Information</h3>
         <label>Name
           <input {...register('basics.name', { required: true })} />
         </label>
@@ -94,10 +94,20 @@ export default function Form({ defaultValues }: Props) {
         </label>
 
         <label>
-          Label
+          Job Title
           <input {...register('basics.label', { required: true })} />
         </label>
-
+        <label>
+          Summary
+          <textarea {...register('basics.summary', { required: true })} />
+        </label>
+        <label>
+          Website
+          <input {...register('basics.url', { required: true })} />
+        </label>
+      </section>
+      <section>
+        <h3>Contact info</h3>
         <label>
           Email
           <input {...register('basics.email', { required: true, pattern: /^\S+@\S+$/i })} />
@@ -108,15 +118,7 @@ export default function Form({ defaultValues }: Props) {
           <input {...register('basics.phone', { required: true })} />
         </label>
 
-        <label>
-          Url
-          <input {...register('basics.url', { required: true })} />
-        </label>
 
-        <label>
-          Summary
-          <textarea {...register('basics.summary', { required: true })} />
-        </label>
 
         <section>
           <h3>Location</h3>
