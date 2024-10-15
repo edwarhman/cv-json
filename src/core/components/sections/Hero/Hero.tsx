@@ -41,76 +41,106 @@ export default function Hero({ basics, uiContent }: Props) {
             <MapPin />
             {location?.city}, {location?.region}
           </span>
-          <span className='print'>
-            <WorldMap />
-            {url}
-          </span>
-          <footer className='print'>
-            <div>
-              {printInfo}
-            </div>
-
-          </footer>
-          <footer className='no-print'>
+          <div className='prnt'>
             {
-              url && (
-                <a
-                  href={`${url}`}
-                  title={uiUtils[uiContent.locale as Locale].contact.email(name, email)}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <WorldMap />
+              url && <span>
+                <WorldMap />
+                <a href={url} target='_blank' rel='noreferrer'>
+                  {url}
                 </a>
-              )
+              </span>
             }
             {
-              email && (
-                <a
-                  href={`mailto:${email}`}
-                  title={uiUtils[uiContent.locale as Locale].contact.email(name, email)}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
+              linkedUrl &&
+              <span>
+                <LinkedIn />
+                <a href={linkedUrl} target='_blank' rel='noreferrer'>
+                  {linkedUrl}
+                </a>
+              </span>
+            }
+            <span >
+              {
+                email &&
+                <>
                   <Mail />
-                </a>
-              )
-            }
-            {
-              phone && (
-                <a
-                  href={`tel:${phone}`}
-                  title={uiUtils[uiContent.locale as Locale].contact.phone(name, phone)}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <Phone />
-                </a>
-              )
-            }
-            {
-              profiles?.map(({ network, url, username }) => {
-                const Icon = SOCIAL_ICONS[network]
-
-                return (
-                  <a
-                    key={network + '-contact'}
-                    href={url}
-                    title={uiUtils[uiContent.locale as Locale].contact.socialMedia(name, network)}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    {Icon ? <Icon /> : network}
+                  <a href={`mailto:${email}`} target='_blank' rel='noreferrer'>
+                    {email}
                   </a>
-                )
-              })
-            }
-          </footer>
+                </>
+              }
+              {
+                phone &&
+                <>
+                  <Phone />
+                  <a href='tel:{phone}' target='_blank' rel='noreferrer'>
+                    {phone}
+                  </a>
+                </>
+              }
+            </span>
+          </div>
+
+          {/* <footer className='no-print'> */}
+          {/*   { */}
+          {/*     url && ( */}
+          {/*       <a */}
+          {/*         href={`${url}`} */}
+          {/*         title={uiUtils[uiContent.locale as Locale].contact.email(name, email)} */}
+          {/*         target='_blank' */}
+          {/*         rel='noopener noreferrer' */}
+          {/*       > */}
+          {/*         <WorldMap /> */}
+          {/*       </a> */}
+          {/*     ) */}
+          {/*   } */}
+          {/*   { */}
+          {/*     email && ( */}
+          {/*       <a */}
+          {/*         href={`mailto:${email}`} */}
+          {/*         title={uiUtils[uiContent.locale as Locale].contact.email(name, email)} */}
+          {/*         target='_blank' */}
+          {/*         rel='noopener noreferrer' */}
+          {/*       > */}
+          {/*         <Mail /> */}
+          {/*       </a> */}
+          {/*     ) */}
+          {/*   } */}
+          {/*   { */}
+          {/*     phone && ( */}
+          {/*       <a */}
+          {/*         href={`tel:${phone}`} */}
+          {/*         title={uiUtils[uiContent.locale as Locale].contact.phone(name, phone)} */}
+          {/*         target='_blank' */}
+          {/*         rel='noopener noreferrer' */}
+          {/*       > */}
+          {/*         <Phone /> */}
+          {/*       </a> */}
+          {/*     ) */}
+          {/*   } */}
+          {/*   { */}
+          {/*     profiles?.map(({ network, url, username }) => { */}
+          {/*       const Icon = SOCIAL_ICONS[network] */}
+          {/**/}
+          {/*       return ( */}
+          {/*         <a */}
+          {/*           key={network + '-contact'} */}
+          {/*           href={url} */}
+          {/*           title={uiUtils[uiContent.locale as Locale].contact.socialMedia(name, network)} */}
+          {/*           target='_blank' */}
+          {/*           rel='noopener noreferrer' */}
+          {/*         > */}
+          {/*           {Icon ? <Icon /> : network} */}
+          {/*         </a> */}
+          {/*       ) */}
+          {/*     }) */}
+          {/*   } */}
+          {/* </footer> */}
         </div>
         <figure className=''>
           {image && <img src={image} alt={name} />}
         </figure>
       </div>
-    </Section>
+    </Section >
   )
 }

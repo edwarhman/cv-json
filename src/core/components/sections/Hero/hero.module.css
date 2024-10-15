@@ -28,7 +28,7 @@
 .heroContainer img {
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    width: 178px;
+    width: 148px;
     border-radius: 16px;
 }
 
@@ -36,9 +36,15 @@
     color: #666;
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.45rem;
+    margin-bottom: 0.15rem;
     font-size: 0.85rem;
     letter-spacing: -0.05rem;
+}
+
+.heroContainer a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 .heroContainer footer {
