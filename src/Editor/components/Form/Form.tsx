@@ -126,7 +126,6 @@ export default function Form({ defaultValues }: Props) {
             Address
             <input {...register('basics.location.address', { required: true })} />
           </label>
-
           <Row>
             <label>
               City
@@ -139,12 +138,12 @@ export default function Form({ defaultValues }: Props) {
           </Row>
           <Row>
             <label>
-              Postal Code
-              <input {...register('basics.location.postalCode', { required: true })} />
+              Country
+              <input {...register('basics.location.countryCode', { required: true })} />
             </label>
             <label>
-              Country Code
-              <input {...register('basics.location.countryCode', { required: true })} />
+              Postal Code
+              <input {...register('basics.location.postalCode', { required: true })} />
             </label>
           </Row>
         </section>

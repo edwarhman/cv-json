@@ -39,7 +39,11 @@ export default function Hero({ basics, uiContent }: Props) {
           <h2>{label}</h2>
           <span>
             <MapPin />
-            {location?.city}, {location?.region}
+            {location.address ? location?.address + ' ' : ''}
+            {location?.city ? location?.city + ' ' : ''}
+            {location?.region ? location?.region + ' ' : ''}
+            {location?.postalCode ? location?.postalCode + ' ' : ''}
+            {location?.countryCode ? location?.countryCode : ''}
           </span>
           <div className='prnt'>
             {
