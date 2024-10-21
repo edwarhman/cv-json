@@ -1,35 +1,15 @@
 <div align="center">
 <h2>
-    <em>Resume</em> minimalista maquetado para web y pdf
+    <em>Minimalist Resume</em> formatted for web and PDF
 </h2>
 <p>
-Esquema del JSON de CV de <a href="https://jsonresume.org/schema/">jsonresume.org</a>
+Schema of the JSON Resume from <a href="https://jsonresume.org/schema/">jsonresume.org</a>
 </p>
 
 <p>
-Basado en el diseño de <a href="https://github.com/BartoszJarocki/cv">Bartosz Jarocki</a>
-y en la <a href="https://github.com/midudev/minimalist-portfolio-json">plantilla</a> de <a href="https://midu.dev">Midudev</a>
-
+Based on the design by <a href="https://github.com/BartoszJarocki/cv">Bartosz Jarocki</a>
+and the <a href="https://github.com/midudev/minimalist-portfolio-json">template</a> by <a href="https://midu.dev">Midudev</a>
 </p>
-
-</div>
-
-<div align="center">
-    <a href="#🚀-empezar">
-        Empezar
-    </a>
-    <span>&nbsp;✦&nbsp;</span>
-    <a href="#🧞-comandos">
-        Comandos
-    </a>
-    <span>&nbsp;✦&nbsp;</span>
-    <a href="#🔑-licencia">
-        Licencia
-    </a>
-    <span>&nbsp;✦&nbsp;</span>
-    <a href="https://midu.dev">
-        Personal
-    </a>
 
 </div>
 
@@ -37,100 +17,42 @@ y en la <a href="https://github.com/midudev/minimalist-portfolio-json">plantilla
 
 ## 🛠️ Stack
 
-- [**Astro**](https://astro.build/) - El framework web de la nueva época.
-- [**Typescript**](https://www.typescriptlang.org/) - JavaScript con sintaxis de tipado.
-- [**Ninja Keys**](https://github.com/ssleptsov/ninja-keys) - Menu desplegable con atajos de teclado hecho en puro Javascript.
+- [**Astro**](https://astro.build/) - The web framework of the new era.
+- [**React**](https://react.dev/) - The JavaScript library for building user interfaces.
+- [**React Hook Form**](https://react.dev/) - React Hook for building forms with easy-to-use validation.
+- [**Typescript**](https://www.typescriptlang.org/) - JavaScript with type syntax.
+- [**Ninja Keys**](https://github.com/ssleptsov/ninja-keys) - Dropdown menu with keyboard shortcuts made in pure JavaScript.
 
-## 🚀 Empezar
+## 🚀 Getting Started
 
-### 1. Usa este [repo](https://github.com/midudev/minimalist-portfolio-json) como _template_ de un proyecto de Astro
-
-- Yo uso [pnpm](https://pnpm.io/installation) como gestor de dependencias y empaquetador.
-
-```bash
-# Activa pnpm en MacOS, WSL & Linux:
-corepack enable
-corepack prepare pnpm@latest --activate
-
-# Inicializa el proyecto
-pnpm create astro@latest -- --template midudev/minimalist-portfolio-json
-```
-
-### 2. Añade tu contenido
-
-Edita los archivos en el directorio `src/cv` para crear tu propio Portafolio/CV imprimible en lenguaje español e inglés, o crea un nuevo archivo para añadir un nuevo idioma.
-
-### 3. Lanza el servidor de desarrollo
+### 1. Clone the project
 
 ```bash
-# Disfruta del resultado
-pnpm dev
+git clone https://github.com/edwarhman/cv-json && cd cv-json
 ```
 
-1. Abre [**http://localhost:4321**](http://localhost:4321/) en tu navegador para ver el resultado 🚀
+### 2. Install dependencies
 
-## 🧞 Comandos
+```bash
+npm install
+```
 
-|     | Comando         | Acción                                                                       |
-| :-- | :-------------- | :--------------------------------------------------------------------------- |
-| ⚙️  | `dev` o `start` | Lanza un servidor de desarrollo local en `localhost:4321`.                   |
-| ⚙️  | `build`         | Comprueba posibles errores y hace un empaquetado de producción en `./dist/`. |
-| ⚙️  | `preview`       | Vista previa en local `localhost:4321`                                       |
+### 3. Start the development server
 
-## 🔑 Licencia
+```bash
+npm dev
+```
 
-[MIT](LICENSE.txt) - Basado en el proyecto de [**midudev**](https://midu.dev) y modificado por [**edwarhman**](https://github.com/edwarhman).
+1. Open [**http://localhost:4321**](http://localhost:4321/) in your browser to see the result 🚀
 
-# TODO
+## 🧞 Commands
 
-[x] Cambiar layout Location
-[x] city - region
-[x] postalCode - Country Code
-[x] Estilar field list
-[x] añadir separador entre botón y campos
-[x] personalizar boton de agregar campo
-[x] ajustar ancho botón
-[x] cambiar icono de eliminar campo por papelera
-[x] cambiar layout según el tipo (external, internal)
-[x] agregar margin inferior a footer
-[x] quitar separador en el tipo internal
-[x] Layout de Trabajos
-[x] start date - end date
-[x] Layout de Educacion
-[x] start date - end date
+|     | Command          | Action                                                                  |
+| :-- | :--------------- | :---------------------------------------------------------------------- |
+| ⚙️  | `dev` or `start` | Starts a local development server at `localhost:4321`.                  |
+| ⚙️  | `build`          | Checks for possible errors and creates a production build in `./dist/`. |
+| ⚙️  | `preview`        | Local preview at `localhost:4321`.                                      |
 
-[x] Corregir que se queda guardada la información inicial cuando se edita el formulario
-[x] Cambiar layout footer de FieldsList
-[x] Cambiar input active de proyectos a checkbox
-[x] Corregir que los títulos de las secciones se muestran aunque no hay información
-[x] Corregir que se muestra la foto incluso cuando no hay una URL
-[x] Cambiar tamaño y separación de títulos de secciones en el editor
-[x] Añadir separación entre listas de trabajos, proyectos y educación
-[x] Corregir que no se muestra el titulo de la sección de experiencia
-[x] Corregir botón dentro de botón
-[x] Corregir errores clip-rule y fill-rule en svg
-[x] Hacer los append field buttons más grandes cuando es tipo external
-[x] Corregir error de hidratación de react
-[x] Agregar Personal URL al CV
-[x] cambiar icono de localización por un map pin
-[x] Guardar cambios en local storage
-[x] corregir error no se muestra el preview cuando se modifican las redes (no se llenan completamente)
-[] Corregir warning not key prop passed to list item
-[] Corregir error no carga correctamente las cuentas sociales predefinidas
-[x] Corregir que no se muestra un mensaje de error en la fecha cuando no hay ninguna
-[] Cambiar información por defecto
-[] Corregir que el primer botón de la lista de campos se hace hover cuando no debe
-[] Agregar opciones para imprimir, exportar y guardar en formato json
-[] agregar navbar para poder navegar por las secciones del editor
-[x] agregar informacion a los botones
-[] agregar placeholder a los campos
-[] separar certificaciones de la educacion
-[] cambiar posicion de los inputs de localizacion para que sea acorde al preview
-[x] cambiar icono de mostrar/ocultar vista previa por un ojo y un lapiz
-[x] hacer que que el preview ocupe maximo el 100% del ancho de pantalla
-[x] feat/upload-image
-[x] cambiar text input por input file
-[x] agregar astro endpoint para manejar la subida de imagenes
-[x] comprimir imagen
-[x] subir imagen a cloud storage
-[x] leer imagen de la nube
+## 🔑 License
+
+[MIT](LICENSE.txt) - Based on the project by [**midudev**](https://midu.dev) and modified by [**edwarhman**](https://github.com/edwarhman).
