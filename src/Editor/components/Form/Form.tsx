@@ -1,5 +1,5 @@
 import FormFieldsList from '@/Editor/components/FormFieldsList/FormFieldsList'
-import { updateCv } from '@/core/stores/cv.store'
+import { importedItems, updateCv } from '@/core/stores/cv.store'
 import type { CV, } from '@/cv'
 import { useEffect, useState, type ChangeEvent } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
@@ -12,6 +12,7 @@ import Row from '@/core/components/Row'
 import DottedBox from '../BigButton/BigButton'
 import UploadImage from '../UploadImage/UploadImage'
 import Compressor from 'compressorjs'
+import { useStore } from '@nanostores/react'
 
 interface Props {
   defaultValues?: CV
@@ -19,6 +20,18 @@ interface Props {
 
 export default function Form({ defaultValues }: Props) {
   const { register, getValues, control, setValue } = useForm<CV>()
+  const importedCvStore = useStore(importedItems)
+
+  useEffect(() => {
+    if (Object.keys(importedCvStore).length > 0) {
+      setValue('basics', importedCvStore?.basics)
+      setValue('work', importedCvStore?.work)
+      setValue('education', importedCvStore?.education)
+      setValue('projects', importedCvStore?.projects)
+      updateCv(importedCvStore)
+      updateLocalStorage(importedCvStore)
+    }
+  }, [importedCvStore])
 
   useEffect(() => {
 
@@ -28,6 +41,7 @@ export default function Form({ defaultValues }: Props) {
     setValue('work', initialValues?.work)
     setValue('education', initialValues?.education)
     setValue('projects', initialValues?.projects)
+    updateCv(initialValues)
   }, [])
 
   function updateLocalStorage(data: CV) {
@@ -67,9 +81,10 @@ export default function Form({ defaultValues }: Props) {
     });
   }
 
-  useEffect(() => {
+  if (Object.keys(getValues()).length > 0) {
+    console.log(getValues())
     updateCv(getValues())
-  })
+  }
 
 
   return (
