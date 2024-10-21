@@ -25,7 +25,7 @@ const cv = pages.find((page) => page.id === lang)
       <button title={uiContent.button.preview} aria-label={uiContent.button.preview} class="button hide no-print" id="edit-button"><Edit /></button>
       <ul class="preview-controls no-print">
         <li><button title={uiContent.button.print} aria-label={uiContent.button.print} id="print-button" class="button"><Print /></button></li>
-        <li><button title={uiContent.button.export} aria-label={uiContent.button.export} id="export-button" class="button"><FileExport /></button></li>
+        <li><a title={uiContent.button.export} aria-label={uiContent.button.export} id="export-button" class="button"><FileExport /></a></li>
         <li><button title={uiContent.button.import} aria-label={uiContent.button.import} id="import-button" class="button"><FileImport /></button></li>
       </ul>
       <main class="editor no-print box-shadow">
@@ -38,12 +38,25 @@ const cv = pages.find((page) => page.id === lang)
 </Layout>
 
 <script>
+  import { cvItems } from "@/core/stores/cv.store";
+  import type { CV } from "@/cv";
   const appendButton = document.getElementById("extend-button")
   const editButton = document.getElementById("edit-button")
   const cvPreview = document.querySelector(".editor-container")
   const printButton = document.getElementById("print-button")
   const importButton = document.getElementById("import-button")
   const exportButton = document.getElementById("export-button")
+  let cvInformation: CV
+
+  cvItems.subscribe((cv) => {
+    cvInformation = cv
+  })
+
+  exportButton?.addEventListener("click", ()=>{
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(cvInformation))
+    exportButton.setAttribute('href', dataStr)
+    exportButton.setAttribute('download', `${cvInformation.basics.name}.cvdit.json`)
+  })
 
   appendButton?.addEventListener("click", ()=>{
     cvPreview?.classList.toggle("expanded")
