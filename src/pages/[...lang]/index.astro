@@ -62,15 +62,18 @@ const cv = pages.find((page) => page.id === lang)
     const input = document.createElement('input')
     input.type = 'file'
     input.accept = 'application/json'
-    input.onchange = (e) => {
-      const file = e.target.files[0]
-      const reader = new FileReader()
-      reader.onload = (e) => {
-        const data = JSON.parse(e.target.result)
-        cvInformation = data
-        importedItems.set(data)
+    input.onchange = (e: Event) => {
+    const targetinput = e.target as HTMLInputElement
+      if (targetinput != null) {
+        const file = targetinput.files ? targetinput.files[0] : new File([], "")
+        const reader = new FileReader()
+        reader.onload = (e) => {
+          const data = JSON.parse(e.target?.result as string)
+          cvInformation = data
+          importedItems.set(data)
+        }
+        reader.readAsText(file)
       }
-      reader.readAsText(file)
     }
     input.click()
   })
