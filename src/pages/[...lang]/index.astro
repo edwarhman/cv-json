@@ -29,7 +29,7 @@ const cv = pages.find((page) => page.id === lang)
         <li><button title={uiContent.button.import} aria-label={uiContent.button.import} id="import-button" class="button"><FileImport /></button></li>
       </ul>
       <main class="editor no-print box-shadow">
-          <Form client:load defaultValues={undefined} />
+      <Form client:load />
       </main>
       <aside class="preview box-hadow">
           <Cv client:load uiContent={uiContent} />

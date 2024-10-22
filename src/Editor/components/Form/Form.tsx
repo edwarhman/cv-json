@@ -15,10 +15,10 @@ import Compressor from 'compressorjs'
 import { useStore } from '@nanostores/react'
 
 interface Props {
-  defaultValues?: CV
+  defaultValues?: CV | {}
 }
 
-export default function Form({ defaultValues }: Props) {
+export default function Form({ defaultValues = {} }: Props) {
   const { register, getValues, control, setValue } = useForm<CV>()
   const importedCvStore = useStore(importedItems)
 
